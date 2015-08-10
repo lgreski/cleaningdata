@@ -5,3 +5,4 @@
 ## Date: 10 August 2015
 ## Revision history: revisions tracked on github.com
 ## 
+if (Sys.getenv("OS") == "Windows_NT") setwd("C:/Users/Leonard/Desktop/OneDrive/Coursera/R Working Directory")
