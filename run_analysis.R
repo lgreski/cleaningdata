@@ -12,7 +12,6 @@
 ## 4. Appropriately labels the data set with descriptive variable names. 
 ## 5. From the data set in step 4, creates a second, independent tidy data set 
 ##    with the average of each variable for each activity and each subject.
-## if (Sys.getenv("OS") == "Windows_NT") setwd("C:/Users/Leonard/Desktop/OneDrive/Coursera/R Working Directory")
 
 ## set up directories
 theTrainDirectory <- "./data/UCI HAR Dataset/train/"
@@ -22,7 +21,10 @@ library(dplyr)
 
 ## read activity file
 activityData <- read.table(paste(theDataDirectory,"activity_labels.txt",sep=''),
-                           col.names=c("activityid","activityname"),stringsAsFactors=FALSE)
+                           col.names=c("activityId","activityName"),stringsAsFactors=FALSE)
+## clean up text in activity file
+activityData[,2] <- tolower(activityData[,2])
+activityData[,2] <- sub("_"," ",activityData[,2])
 ## read test file
 testData <- read.table(paste(theTestDirectory,"X_test.txt",sep=""))
 testLabels <- read.table(paste(theTestDirectory,"y_test.txt",sep=""),
@@ -57,10 +59,15 @@ trainData <- read.table(paste(theTrainDirectory,"X_train.txt",sep=""))
 trainLabels <- read.table(paste(theTrainDirectory,"y_train.txt",sep=""),
                          col.names=c("activityId"))
 trainSubjects <- read.table(paste(theTrainDirectory,"subject_train.txt",sep=""),col.names=c("personId"))
+## assign column names from featureData to training data, in prep for rbind()
+colnames(trainData) <- featureData[,2]
 theTrainTable <- as.tbl(trainData)
 trainDataSubset <- theTrainTable[,meanColNames]
 trainDataFinal <- cbind(trainSubjects,trainLabels,trainDataSubset)
 ## remove unnecessary data prior to rbind
-## rm(testData,testLabels,testSubjects,theDataSubset,theTestTable,trainData,theTrainTable)
+rm(testData,testLabels,testSubjects,theDataSubset,theTestTable,trainData,theTrainTable)
 ## bind the rows, should be 2947 + 7352 = 10299 rows, 68 columns 
 theData <- rbind(trainDataFinal,testDataFinal)
+## merge activity labels with final dataset: important to do this after binding columns
+## for training & test data because the merge sorts the data by activityId
+theData <- merge(theData,activityData,by.x="activityId",by.y="activityId")
