@@ -27,17 +27,18 @@ As described in a 2012 research article,
 (Reference: Howard, C. et. al., *The Nexus of Forces: Social, Mobile, Cloud, and Information,* Gartner Inc., Stamford CT, June 2012)
 
 Wearable computing is at the center of the nexus of forces. It uses mobile devices as a platform to generate large amounts of data about people's behavior. One such study was undertaken by Jorge L. Reyes-Ortiz et. al. from the Technical Research Centre for Dependency Care and Autonomous Living. In April 2013 they released [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
-
 The dataset is the result of an experiment in tracking humans' activities while a Samsung Galaxy SII smartphone was attached to each participant's waist.
-####The Data Cleaning Task####
+
+#### The Data Cleaning Task ####
+
 The objective for the course project is to read the \<x\> files distributed by the research team and combine them into a single dataset that is easy to use for subsequent analysis in the statistics package R.
 Specifically, course participants must devleop an R script called *run_analysis.R* that:
-1. Merges the separate training and test data files to create one data set.
-2. Eliminate all measurements other than means and standard deviations from the measurement data, which includes 561 different measurements taken on the smartphone.
-3. Create descriptive activity names to name each activity in the data set.
-4. Label all variables in the data set with descriptive varaible names.
-5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
-####Cleaning Considerations###
+  1. Merges the separate training and test data files to create one data set.
+  2. Eliminate all measurements other than means and standard deviations from the measurement data, which includes 561 different measurements taken on the smartphone.
+  3. Create descriptive activity names to name each activity in the data set.
+  4. Label all variables in the data set with descriptive varaible names.
+  5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
+<h4 id="considerations"> Cleaning Considerations </h4>
 
 
 <h3 id="contents">Repository Contents</h3>
