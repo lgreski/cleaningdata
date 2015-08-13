@@ -37,7 +37,7 @@ activityData <- read.table(paste(theDataDirectory,"activity_labels.txt",sep=''),
                            col.names=c("activityId","activityName"),stringsAsFactors=FALSE)
 ## clean up text in activity file
 activityData[,2] <- tolower(activityData[,2])
-## note: leave underscore in activity name so we can use spaces to delimit output file
+## remove underscores from activity name, since character strings will be quoted in output file
 activityData[,2] <- sub("_"," ",activityData[,2])
 ## read test file
 testData <- read.table(paste(theTestDirectory,"X_test.txt",sep=""))
