@@ -181,10 +181,13 @@ In support of tidy data requirement 2, the output file tidydata.txt, contains 18
 Finally, in support of tidy data requirement 3, there is one table output, and the observational unit: person / activity combinations, requires one and only one table.
 
 <h3 id="readoutput">Reading the Output File</h3>
+
 explain how the output file must be read as a single table, with spaces as delimiters. Provide code required to read the file.
 
 <h2 id="processing">Processing Steps</h2>
+
 discussion about key assumptions - all files in R working directory
+
     1. Confirm all 8 required files are present in the R working directory
     2. Read activity data and remove special characters from activity names
     3. Read the features file and do the following:
@@ -202,7 +205,7 @@ discussion about key assumptions - all files in R working directory
         * Bind the personId and activityId columns to the measurement data
     6. Step 6
     7. Step 7
-    8. Step 8 
+    8. Step 8
 
 <h3 id="reading">Reading the Input Files</h3>
 
