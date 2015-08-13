@@ -88,7 +88,7 @@ Specifically, as outlined in the course project instructions, participants must 
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 <h4 id="considerations"> Cleaning Considerations </h4>
-The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other. The contents of the eight files are summarized below.
+The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other and how to combine them into a single data set for subsequent analysis. The contents of the eight files are summarized below.
 <table>
     <tr>
         <th>File</th>
@@ -185,6 +185,24 @@ explain how the output file must be read as a single table, with spaces as delim
 
 <h2 id="processing">Processing Steps</h2>
 discussion about key assumptions - all files in R working directory
+    1. Confirm all 8 required files are present in the R working directory
+    2. Read activity data and remove special characters from activity names
+    3. Read the features file and do the following:
+        * Clean the feature identifiers by removing special characters
+        * Identify features that are means or standard deviations
+    4. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
+        * Add column name, personId, to subject data set
+        * Add column name, activityId, to activity data set
+        * Assign column names to the measurement data set, using the previously cleaned feature names
+        * Bind the personId and activityId columns to the measurement data
+    5. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
+        * Add column name, personId, to subject data set
+        * Add column name, activityId, to activity data set
+        * Assign column names to the measurement data set, using the previously cleaned feature names
+        * Bind the personId and activityId columns to the measurement data
+    6. Step 6
+    7. Step 7
+    8. Step 8 
 
 <h3 id="reading">Reading the Input Files</h3>
 
