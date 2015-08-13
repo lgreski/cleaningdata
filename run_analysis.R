@@ -39,11 +39,6 @@ activityData <- read.table(paste(theDataDirectory,"activity_labels.txt",sep=''),
 activityData[,2] <- tolower(activityData[,2])
 ## remove underscores from activity name, since character strings will be quoted in output file
 activityData[,2] <- sub("_"," ",activityData[,2])
-## read test file
-testData <- read.table(paste(theTestDirectory,"X_test.txt",sep=""))
-testLabels <- read.table(paste(theTestDirectory,"y_test.txt",sep=""),
-                         col.names=c("activityId"))
-testSubjects <- read.table(paste(theTestDirectory,"subject_test.txt",sep=""),col.names=c("personId"))
 
 ## read features file
 featureData <- read.table(paste(theDataDirectory,"features.txt",sep=''),stringsAsFactors=FALSE)
@@ -61,10 +56,20 @@ featureData[,2] <- sub("std","Stdev",featureData[,2])
 ## strip out () from featureData
 featureData[,2] <- sub("\\(\\)","",featureData[,2])
 
-## strip out dashes, and label the testData
+## strip out dashes, and create vectors of means and standard deviations
+## to subset the measurement data sets
 featureData[,2] <- gsub("-","",featureData[,2])
-colnames(testData) <- featureData[,2]
+
 meanColNames <- featureData[c(theMeanIndexes,theStdsIndexes),2]
+
+## read test files, add column labels to measurement data set and bind
+## subject and activity ids
+testData <- read.table(paste(theTestDirectory,"X_test.txt",sep=""))
+testLabels <- read.table(paste(theTestDirectory,"y_test.txt",sep=""),
+                         col.names=c("activityId"))
+testSubjects <- read.table(paste(theTestDirectory,"subject_test.txt",sep=""),col.names=c("personId"))
+## set the column names for measurement file with the complete list of feature names
+colnames(testData) <- featureData[,2]
 theTestTable <- as.tbl(testData)
 theDataSubset <- theTestTable[,meanColNames]
 
