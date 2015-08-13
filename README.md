@@ -34,7 +34,9 @@ The research team also explained how the data from the inertial sensors were pro
 
 >The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of 561 features was obtained by calculating variables from the time and frequency domain.
 
-All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities, as illustrated below. 
+Reference: HAR@SMARTLAB website, retrieved from https://sites.google.com/site/harsmartlab/ on August 12, 2015.
+
+All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities, as illustrated below.
 <table>
     <tr>
         <th>Activity</th>
@@ -72,6 +74,7 @@ All thirty participants were tracked on three static postures and three dynamic 
         <td>65</td>
     </tr>
 </table>
+The data was randomly partitioned into two separate sets of data: 70% of the participants were allocated to a training group, and the remaining 30% were allocated to the test group. The training data was used to train a proposed Multiclass Hardware Friendly Support Vector Machine \(MC-HF-SVM\), described in [Anguita, et. al. 2012](http://www.icephd.org/sites/default/files/IWAAL2012.pdf). The test data was then used to evaluate the effectiveness of the MC-HF-SVM in classifying activities based on the measurements taken by the smartphone.  The classification performance from the HF-SVM was compared to a more traditional Multiclass SVM \(MC-SVM\). The proposed MC-HF-SVM performed comparably to the traditional MC-SVM, indicating that the hardware friendly approach could provide a more economical alternative to the traditional MC-SVM, while maintaining the same level of accuracy.
 
 #### The Data Cleaning Task ####
 
@@ -85,7 +88,48 @@ Specifically, as outlined in the course project instructions, participants must 
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 <h4 id="considerations"> Cleaning Considerations </h4>
-There are \<x\> factors that make the project a challenging assignment. First, there is no single piece of documentation that explains how the different files provided by the *Technical Research Centre* relate to each other. Second, the approach taken to organize the data
+The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other. The contents of the eight files are summarized below. 
+<table>
+    <tr>
+        <th>File</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>activity_labels.txt</td>
+        <td>File containing six rows of data, where each row contains an activity identifier and an activity description, a text label to associate with the y_train.txt and y_test.txt files. The numeric identifier and text labels are separated by a blank space. The activity label words are delmited by an underscore when an activity contains more than a single word. </td>
+    </tr>
+    <tr>
+        <td>features.txt</td>
+        <td>File listing the 561 different measurements taken from the smartphone each time a person was measured for one of the six activities monitored during the experiment. Data is listed in one row per measurement, where the line number in the file is the assumed key to match against the test and training data files. </td>
+    </tr>
+    <tr>
+        <td>subject_test.txt</td>
+        <td>File containing one column of data that identifies the subject \(i.e. person\) corresponding to each row of data in the test measurement x_test.txt file.  </td>
+    </tr>
+    <tr>
+        <td>x_test.txt</td>
+        <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
+    </tr>
+    <tr>
+        <td>y_test.txt</td>
+        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_test.txt file.</td>
+    </tr>
+    <tr>
+        <td>subject_train.txt</td>
+        <td>File containing one column of data that identifies the subject \(i.e. person\) corresponding to each row of data in the test measurement x_train.txt file.  </td>
+    </tr>
+    <tr>
+        <td>x_train.txt</td>
+        <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
+    </tr>
+    <tr>
+        <td>y_train.txt</td>
+        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_train.txt file.</td>
+    </tr>
+</table>
+Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same is true for the
+
+Second, the approach taken to organize the data
 <h3 id="contents">Repository Contents</h3>
 
 <h3 id="tidydesc">Output File: why is it tidy?</h3>
@@ -93,7 +137,7 @@ There are \<x\> factors that make the project a challenging assignment. First, t
 <h3 id="readoutput">Reading the Output File</h3>
 
 <h2 id="processing">Processing Steps</h2>
-
+discussion about key assumptions - all files in R working directory
 <h3 id="reading">Reading the Input Files</h3>
 
 <h3 id="finding">Finding the Means and Standard Deviations</h3>
