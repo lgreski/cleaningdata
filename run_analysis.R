@@ -20,6 +20,18 @@ theTestDirectory <- paste(getwd(),"/",sep="")
 theDataDirectory <- paste(getwd(),"/",sep="")
 library(dplyr)
 library(data.table)
+
+## check if data files are in current working directory
+theFileList = c("activity_labels.txt","features.txt",
+                "X_train.txt","y_train.txt","subject_train.txt",
+                "X_test.txt","y_test.txt","subject_test.txt")
+warning(paste("The current working directory is:",getwd()))
+for (i in 1:length(theFileList)) {
+     if (!file.exists(theFileList[i])) stop(paste("File",theFileList[i],"is not in the working directory. Please add this file to the working directory and rerun the script."))
+}
+## if we get this far, all files exist, so send a message to console 
+warning(paste("All required files confirmed as existing in",getwd()))
+
 ## read activity file
 activityData <- read.table(paste(theDataDirectory,"activity_labels.txt",sep=''),
                            col.names=c("activityId","activityName"),stringsAsFactors=FALSE)
