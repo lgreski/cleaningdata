@@ -7,9 +7,11 @@ Getting and Cleaning Data: README
     * [Reading the output file] (#readoutput)
 * [Processing Steps] (#processing)
     * [Outline of Steps in run_analysis.R](#stepsoutline)
-    * [Commentary: Reading the input files] (#reading)
-    * [Commentary: Finding the means and standard deviations] (#finding)
-    * [Commentary: Output file format: wide vs. narrow tidy dataset] (#widevsnarrow)
+    * [Commentary: Reading the input files](#reading)
+    * [Commentary: Finding the means and standard deviations](#finding)
+    * [Commentary: Output file format: wide vs. narrow tidy dataset](#widevsnarrow)
+* [Running the R Script](#runscript)
+* [Loading the Tidy Data File into R](#readtidydata)
 
 * * *
 
@@ -108,7 +110,7 @@ The key challenge to using the dataset  provided by the *Technical Research Cent
     </tr>
     <tr>
         <td>subject_test.txt</td>
-        <td>File containing one column of data that identifies the subject \(i.e. person\) corresponding to each row of data in the test measurement x_test.txt file.  </td>
+        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_test.txt file.  </td>
     </tr>
     <tr>
         <td>x_test.txt</td>
@@ -120,7 +122,7 @@ The key challenge to using the dataset  provided by the *Technical Research Cent
     </tr>
     <tr>
         <td>subject_train.txt</td>
-        <td>File containing one column of data that identifies the subject \(i.e. person\) corresponding to each row of data in the test measurement x_train.txt file.  </td>
+        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_train.txt file.  </td>
     </tr>
     <tr>
         <td>x_train.txt</td>
@@ -198,7 +200,7 @@ discussion about key assumptions - all files in R working directory, and explain
 2. Read activity data and remove special characters from activity names
 3. Read the features file and do the following:
     * Clean the feature identifiers by removing special characters
-    * Identify features that are means or standard deviations
+    * Identify features that are [means or standard deviations](#finding)
 4. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
@@ -213,7 +215,7 @@ discussion about key assumptions - all files in R working directory, and explain
     * Bind the personId and activityId columns to the measurement data
 6. Combine the test and training files into a single dataset by using the rbind\(\) function
 7. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled
-8. Summarize the measurement columns to create a wide version of a tidy data set
+8. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations,
     * One row per subject \(personId\) activity \(activityName\) combination, and
     * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
@@ -225,3 +227,7 @@ discussion about key assumptions - all files in R working directory, and explain
 <h3 id="finding">Commentary: Deciding which Variables are the Means and Standard Deviations</h3>
 
 <h3 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h3>
+
+<h2 id="runscript"> Running the run_analysis.R Script </h2>
+
+<h2 id="readtidydata"> Reading the Tidy Data File </h2>
