@@ -188,24 +188,24 @@ explain how the output file must be read as a single table, with spaces as delim
 
 discussion about key assumptions - all files in R working directory
 
-    1. Confirm all 8 required files are present in the R working directory
-    2. Read activity data and remove special characters from activity names
-    3. Read the features file and do the following:
-        * Clean the feature identifiers by removing special characters
-        * Identify features that are means or standard deviations
-    4. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
-        * Add column name, personId, to subject data set
-        * Add column name, activityId, to activity data set
-        * Assign column names to the measurement data set, using the previously cleaned feature names
-        * Bind the personId and activityId columns to the measurement data
-    5. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
-        * Add column name, personId, to subject data set
-        * Add column name, activityId, to activity data set
-        * Assign column names to the measurement data set, using the previously cleaned feature names
-        * Bind the personId and activityId columns to the measurement data
-    6. Step 6
-    7. Step 7
-    8. Step 8
+1. Confirm all 8 required files are present in the R working directory
+2. Read activity data and remove special characters from activity names
+3. Read the features file and do the following:
+    * Clean the feature identifiers by removing special characters
+    * Identify features that are means or standard deviations
+4. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
+    * Add column name, personId, to subject data set
+    * Add column name, activityId, to activity data set
+    * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Bind the personId and activityId columns to the measurement data
+5. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
+    * Add column name, personId, to subject data set
+    * Add column name, activityId, to activity data set
+    * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Bind the personId and activityId columns to the measurement data
+6. Step 6
+7. Step 7
+8. Step 8
 
 <h3 id="reading">Reading the Input Files</h3>
 
