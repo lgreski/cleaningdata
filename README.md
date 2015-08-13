@@ -230,4 +230,6 @@ discussion about key assumptions - all files in R working directory, and explain
 
 <h2 id="runscript"> Running the run_analysis.R Script </h2>
 
+Note that the data must be obtained as specified on the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions), the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).  
+
 <h2 id="readtidydata"> Reading the Tidy Data File </h2>
