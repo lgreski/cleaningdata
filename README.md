@@ -38,6 +38,7 @@ Specifically, course participants must devleop an R script called *run_analysis.
   3. Create descriptive activity names to name each activity in the data set.
   4. Label all variables in the data set with descriptive varaible names.
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
+
 <h4 id="considerations"> Cleaning Considerations </h4>
 
 
