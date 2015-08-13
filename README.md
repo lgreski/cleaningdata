@@ -8,6 +8,7 @@ Getting and Cleaning Data: README
 * [Processing Steps] (#processing)
     * [Reading the input files] (#reading)
     * [Finding the means and standard deviations] (#finding)
+    * [Output file format: wide vs. narrow tidy dataset] (#widevsnarrow)
 
 * * *
 
@@ -197,16 +198,25 @@ discussion about key assumptions - all files in R working directory
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
 5. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-6. Step 6
-7. Step 7
-8. Step 8
+6. Combine the test and training files into a single dataset by using the rbind\(\) function
+7. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled.
+8. Summarize the measurement columns to create a wide version of a tidy data set
+    * Each variable forms a column: means of the 66 variables that were means or standard deviations,
+    * One row per subject \(personId\) activity \(activityName\) combination, and
+    * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table.
+8. Write the output file
+9. Verify the accuracy of the output data file
 
 <h3 id="reading">Reading the Input Files</h3>
 
-<h3 id="finding">Finding the Means and Standard Deviations</h3>
+<h3 id="finding">Deciding which Variables are the Means and Standard Deviations</h3>
+
+<h3 id="widevsnarrow">Output File: Wide vs. Narrow Tidy Format</h3>
