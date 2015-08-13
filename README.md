@@ -88,7 +88,7 @@ Specifically, as outlined in the course project instructions, participants must 
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 <h4 id="considerations"> Cleaning Considerations </h4>
-The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other. The contents of the eight files are summarized below. 
+The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other. The contents of the eight files are summarized below.
 <table>
     <tr>
         <th>File</th>
@@ -127,17 +127,65 @@ The key challenge to using the dataset  provided by the *Technical Research Cent
         <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_train.txt file.</td>
     </tr>
 </table>
-Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same is true for the
+Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data.
 
-Second, the approach taken to organize the data
+Once these data are combined, then the content from the features.txt file must be used to create variable labels for the test and training data.
+
 <h3 id="contents">Repository Contents</h3>
+
+The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) repository includes three files that are required to be posted to GitHub for the assignment.  The files in the GitHub repository include:
+
+<table>
+    <tr>
+        <th>File</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>README.md</td>
+        <td>A file in markdown format that displays when someone accesses the GitHub repository for a person's submission for the course project.</td>
+    </tr>
+    <tr>
+        <td>Codebook.md</td>
+        <td>A file in markdown format that describes the variables \(columns\) contained in the tidy data set that must be uploaded to the Coursera website as part of the the project submission process.</td>
+    </tr>
+    <tr>
+        <td>run_analysis.R</td>
+        <td>An R script that contains all of the R functions used to transform the eight input data files into the required formats for steps 4 and 5 of the assignment instructions.</td>
+    </tr>
+</table>  
+
+A fourth file, the output from step 5 listed in *The Data Cleaning Task* section above must be uploaded to the Coursera website as part of the assignment submission process.
+
+<table>
+    <tr>
+        <th>File</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>tidydata.txt</td>
+        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the *Technical Research Centre* research team.</td>
+    </tr>
+</table>
 
 <h3 id="tidydesc">Output File: why is it tidy?</h3>
 
+The output file submitted for review qualifies as a tidy data set because it matches the requirements for tidy data outlined in Hadley Wickham's *Tidy Data* paper, including:
+    1. Each variable forms a column,
+    2. Each observation forms a row, and
+    3. Each type of observational unit forms a table.
+
+In support of requirement 1 for tidy data, each column contains one and only one variable: an average of one of 66 means and standard deviations measured among the 561 measurements taken by the smartphone.
+
+In support of tidy data requirement 2, the output file tidydata.txt, contains 180 rows, one for each combination of person and activity. An "observation" in this file is a person / activity combination. Thirty research participants with averages across six activities results in a 180 row file.
+
+Finally, in support of tidy data requirement 3, there is one table output, and the observational unit: person / activity combinations, requires one and only one table.
+
 <h3 id="readoutput">Reading the Output File</h3>
+explain how the output file must be read as a single table, with spaces as delimiters. Provide code required to read the file.
 
 <h2 id="processing">Processing Steps</h2>
 discussion about key assumptions - all files in R working directory
+
 <h3 id="reading">Reading the Input Files</h3>
 
 <h3 id="finding">Finding the Means and Standard Deviations</h3>
