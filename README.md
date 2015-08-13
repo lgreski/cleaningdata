@@ -6,13 +6,15 @@ Getting and Cleaning Data: README
     * [Output File: why is it tidy?] (#tidydesc)
     * [Reading the output file] (#readoutput)
 * [Processing Steps] (#processing)
-    * [Reading the input files] (#reading)
-    * [Finding the means and standard deviations] (#finding)
-    * [Output file format: wide vs. narrow tidy dataset] (#widevsnarrow)
+    * [Outline of Steps in run_analysis.R](#stepsoutline)
+    * [Commentary: Reading the input files] (#reading)
+    * [Commentary: Finding the means and standard deviations] (#finding)
+    * [Commentary: Output file format: wide vs. narrow tidy dataset] (#widevsnarrow)
 
 * * *
 
 <h2 id="overview">Overview</h2>
+
 The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software,*  [*Tidy Data*](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
 
   1. Each variable forms a column,
@@ -20,6 +22,7 @@ The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub reposi
   3. Each type of observational unit forms a table.
 
 <h3 id="summary">Project Summary</h3>
+
 The technology research firm Gartner, Inc. has identified four major forces that are converging to radically change the way people live and work. They call this convergence the *Nexus of Forces,* and it includes social computing, cloud-based computing, mobility, and information.
 
 As described in *The Nexus of Forces: Social, Mobile, Cloud, and Information,* Gartner explains how these different forces work together.
@@ -187,7 +190,9 @@ explain how the output file must be read as a single table, with spaces as delim
 
 <h2 id="processing">Processing Steps</h2>
 
-discussion about key assumptions - all files in R working directory
+discussion about key assumptions - all files in R working directory, and explain how remainging content is broken out into an outline of the steps in the R script, plus additional commentary on key decisions / processing steps required to produce the final output.
+
+<h3 id="stepsoutline">Summary of Processing Steps in run_analysis.R </h3>
 
 1. Confirm all 8 required files are present in the R working directory
 2. Read activity data and remove special characters from activity names
@@ -207,16 +212,16 @@ discussion about key assumptions - all files in R working directory
     * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
 6. Combine the test and training files into a single dataset by using the rbind\(\) function
-7. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled.
+7. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled
 8. Summarize the measurement columns to create a wide version of a tidy data set
     * Each variable forms a column: means of the 66 variables that were means or standard deviations,
     * One row per subject \(personId\) activity \(activityName\) combination, and
-    * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table.
+    * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
 8. Write the output file
-9. Verify the accuracy of the output data file
+9. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
-<h3 id="reading">Reading the Input Files</h3>
+<h3 id="reading">Commentary: Reading the Input Files</h3>
 
-<h3 id="finding">Deciding which Variables are the Means and Standard Deviations</h3>
+<h3 id="finding">Commentary: Deciding which Variables are the Means and Standard Deviations</h3>
 
-<h3 id="widevsnarrow">Output File: Wide vs. Narrow Tidy Format</h3>
+<h3 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h3>
