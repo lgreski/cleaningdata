@@ -12,7 +12,7 @@ Getting and Cleaning Data: README
     <h2 id="overview">Overview</h2>
 
     <h3 id="summary">Project Summary</h3>
-The [lgreski/cleaningdata] [1] repository includes the files required to fufill project requirements for the Getting and Cleaning Data course offered by Johns Hopkins University's School of Public Health via Coursera.
+The [lgreski/cleaningdata] [1] GitHub repository includes the files required to fufill project requirements for the Getting and Cleaning Data course offered by Johns Hopkins University's School of Public Health via Coursera.
 
     [1]: http://github.com/lgreski/cleaningdata
 
