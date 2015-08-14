@@ -180,7 +180,7 @@ The output file submitted for review qualifies as a tidy data set because it mat
     2. Each observation forms a row, and
     3. Each type of observational unit forms a table.
 
-In support of requirement 1 for tidy data, each column contains one and only one variable: an average of one of 66 means and standard deviations measured among the 561 measurements taken by the smartphone.
+In support of requirement 1 for tidy data, each column contains one and only one variable: an average of one of 66 means and standard deviations measured among the 561 measurements derived from data collected from the smartphone.
 
 In support of tidy data requirement 2, the output file tidydata.txt, contains 180 rows, one for each combination of person and activity. An "observation" in this file is a person / activity combination. Thirty research participants with averages across six activities results in a 180 row file.
 
