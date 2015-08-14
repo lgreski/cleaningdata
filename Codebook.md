@@ -8,6 +8,75 @@ One of the requirements for the course was to create a tidy data file \(for addi
 
 The tidy data file contains 180 observations, combinations of subjects and activities, where the measured data consists of the mean \(average\) across multiple repetitions of an experiment across six types of physical activities.  The codebook describes each variable in the tidy data file.
 
+In all of the measurement variables, the text tokens have the following meanings.
+<table>
+    <tr>
+        <th>Token</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Body</td>
+        <td>Signal based on the body of an experiment participant</td>
+    </tr>
+    <tr>
+        <td>f</td>
+        <td>Measurement based on the "frequency" domain, taken as a Fast Fourier Transform of the time-based signals </td>
+    </tr>
+    <tr>
+        <td>Gravity</td>
+        <td>Signal based on gravity, the force that attracts a body towards the center of the earth</td>
+    </tr>
+    <tr>
+        <td>Gyro</td>
+        <td>Measurement taken from gyroscope</td>
+    </tr>
+    <tr>
+        <td>Jerk </td>
+        <td>Measurement of sudden movement, based on body acceleration and angular velocity</td>
+    </tr>
+    <tr>
+        <td>Mag</td>
+        <td>Measurement of the maginitude of the Euclidean norm \(i.e. distance from the origin\) of a three-dimensional signal</td>
+    </tr>
+    <tr>
+        <td>t</td>
+        <td>Measurement based on the "time" domain</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>Measurement taken in "X" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+    </tr>
+    <tr>
+        <td>Y</td>
+        <td>Measurement taken in "Y" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+    </tr>
+    <tr>
+        <td>Z</td>
+        <td>Measurement taken in "Z" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+    </tr>
+</table>
+
+Per the *Human Activity Recognition* research team, the original data was organized according to the following process.
+> The features selected for this database come from the accelerometer and gyroscope
+3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't'
+to denote time) were captured at a constant rate of 50 Hz. Then they were filtered
+using a median filter and a 3rd order low pass Butterworth filter with a corner
+frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then
+separated into body and gravity acceleration signals (tBodyAcc-XYZ and
+tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.
+
+>Subsequently, the body linear acceleration and angular velocity were derived
+in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also
+the magnitude of these three-dimensional signals were calculated using the
+Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).
+
+>Finally a Fast Fourier Transform (FFT) was applied to some of these signals
+producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag,
+fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
+
+>These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
 <table>
     <tr>
         <th>Position</th>
@@ -32,18 +101,29 @@ The tidy data file contains 180 observations, combinations of subjects and activ
         <li>Walking upstairs</li>
         </ul> </td>
     </tr>
-    <tr> <td valign=top align=right> 3 </td> <td valign=top> MeanOftBodyAccMeanX </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 4 </td> <td valign=top> MeanOftBodyAccMeanY </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 5 </td> <td valign=top> MeanOftBodyAccMeanZ </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 6 </td> <td valign=top> MeanOftGravityAccMeanX </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 7 </td> <td valign=top> MeanOftGravityAccMeanY </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 8 </td> <td valign=top> MeanOftGravityAccMeanZ </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 9 </td> <td valign=top> MeanOftBodyAccJerkMeanX </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 10 </td> <td valign=top> MeanOftBodyAccJerkMeanY </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 11 </td> <td valign=top> MeanOftBodyAccJerkMeanZ </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 12 </td> <td valign=top> MeanOftBodyGyroMeanX </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 13 </td> <td valign=top> MeanOftBodyGyroMeanY </td> <td> descriptive text here </td> </tr>
-    <tr> <td valign=top align=right> 14 </td> <td valign=top> MeanOftBodyGyroMeanZ </td> <td> descriptive text here </td> </tr>
+    <tr> <td valign=top align=right> 3 </td> <td valign=top> MeanOftBodyAccMeanX </td>  
+    <td> dMean of time domain body acceleration means in X dimension </td> </tr>
+    <tr> <td valign=top align=right> 4 </td> <td valign=top> MeanOftBodyAccMeanY </td>
+    <td> Mean of time domain body acceleration means in Y dimension </td> </tr>
+    <tr> <td valign=top align=right> 5 </td> <td valign=top> MeanOftBodyAccMeanZ </td> <td> Mean of time dimension body acceleration means in Z dimension </td> </tr>
+    <tr> <td valign=top align=right> 6 </td> <td valign=top> MeanOftGravityAccMeanX </td>
+    <td> Mean of time doman gravity acceleration means in X dimension </td> </tr>
+    <tr> <td valign=top align=right> 7 </td> <td valign=top> MeanOftGravityAccMeanY </td>
+    <td> Mean of time domain gravity acceleration means in Y dimension </td> </tr>
+    <tr> <td valign=top align=right> 8 </td> <td valign=top> MeanOftGravityAccMeanZ </td>
+    <td> Mean of time domain gravity acceleration means in X dimension </td> </tr>
+    <tr> <td valign=top align=right> 9 </td> <td valign=top> MeanOftBodyAccJerkMeanX </td>
+    <td> Mean of time domain body acceleration jerk means in X dimension  </td> </tr>
+    <tr> <td valign=top align=right> 10 </td> <td valign=top> MeanOftBodyAccJerkMeanY </td>
+    <td> Mean of time domain body acceleration jerk means in Y dimension </td> </tr>
+    <tr> <td valign=top align=right> 11 </td> <td valign=top> MeanOftBodyAccJerkMeanZ </td>
+    <td> Mean of time domain body acceleration jerk means in Z dimension </td> </tr>
+    <tr> <td valign=top align=right> 12 </td> <td valign=top> MeanOftBodyGyroMeanX </td>
+    <td> Mean of time domain body gyroscope means in X dimension </td> </tr>
+    <tr> <td valign=top align=right> 13 </td> <td valign=top> MeanOftBodyGyroMeanY </td>
+    <td> Mean of time domain body gyroscope means in Y dimension  </td> </tr>
+    <tr> <td valign=top align=right> 14 </td> <td valign=top> MeanOftBodyGyroMeanZ </td>
+    <td> Mean of time domain body gyroscope means in Z dimension  </td> </tr>
     <tr> <td valign=top align=right> 15 </td> <td valign=top> MeanOftBodyGyroJerkMeanX </td> <td> descriptive text here </td> </tr>
     <tr> <td valign=top align=right> 16 </td> <td valign=top> MeanOftBodyGyroJerkMeanY </td> <td> descriptive text here </td> </tr>
     <tr> <td valign=top align=right> 17 </td> <td valign=top> MeanOftBodyGyroJerkMeanZ </td> <td> descriptive text here </td> </tr>
