@@ -325,10 +325,10 @@ The computers and their configurations are described in the following table.
 
 Given our test results, a computer with at least 2Ghz of processing power, 4Gb of memory, and 10Gb of free disk space should be sufficient to process the script with R.
 
-Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The run_analysis.R script automatically installs the required packages if they are not already present in the environment.
+Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
 
-<h2> run_analysis.R Runbook </h2>
-To run the script, the following steps must be taken. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set.
+<h2> run_analysis.R [Runbook](https://en.wikipedia.org/wiki/Runbook) </h2>
+The following steps must be taken to run the script. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set, and therefore does not already have the required data files stored on the computer where *run_analysis.R* will be executed.
 
 1. Download the data as specified in the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions). The data set from the Coursera instructions is a copy of the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) but stored on a server controlled by the course instructor.
 2. Unzip the file, which will create a directory /UCI HAR Dataset.
