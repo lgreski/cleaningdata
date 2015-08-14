@@ -147,15 +147,15 @@ The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) repository in
         <th>Description</th>
     </tr>
     <tr>
-        <td valign=top>README.md</td>
+        <td valign=top>[README.md](https://github.com/lgreski/cleaningdata/blob/master/README.md)</td>
         <td>A file in markdown format that displays when someone accesses the GitHub repository for a person's submission for the course project.</td>
     </tr>
     <tr>
-        <td valign=top>Codebook.md</td>
+        <td valign=top>[Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md)</td>
         <td>A file in markdown format that describes the variables \(columns\) contained in the tidy data set that must be uploaded to the Coursera website as part of the the project submission process.</td>
     </tr>
     <tr>
-        <td valign=top>run_analysis.R</td>
+        <td valign=top>[run_analysis.R](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R)</td>
         <td>An R script that contains all of the R functions used to transform the eight input data files into the required formats for steps 4 and 5 of the assignment instructions.</td>
     </tr>
 </table>  
@@ -168,7 +168,7 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
         <th>Description</th>
     </tr>
     <tr>
-        <td valign=top>tidydata.txt</td>
+        <td valign=top>[tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt)</td>
         <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the Technical Research Centre research team.</td>
     </tr>
 </table>
@@ -213,22 +213,22 @@ The following R code can be used to read the tidy data file once it has been cop
 5. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
-    * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Assign column names to the measurement data set, using the previously cleaned feature names, fulfilling requirements \#3 and \#4
     * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
 6. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
-    * Assign column names to the measurement data set, using the previously cleaned feature names
+    * Assign column names to the measurement data  set, using the previously cleaned feature names, fulfilling requirements \#3 and \#4
     * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-7. Combine the test and training files into a single data set by using the rbind\(\) function
+7. Combine the test and training files into a single data set by using the rbind\(\) function, fulfilling requiremend\#1
 8. Merge the activity labels into the combined measurement data set. At this point, course project requirements \#1 through \#4 are fulfilled
 9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations plus personId and activityName for a total of 68 columns,
     * One row per subject \(personId\) activity \(activityName\) combination, and
     * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
-10. Add "MeanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data  
+10. Add "MeanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data originally provided by the *Human Activity Recognition* research team  
 11. Write the output file
 12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
@@ -247,6 +247,8 @@ Complicating matters is the fact that one must process the files in a specific s
 
 Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame.
 
+Since some students reported problems with R running out of memory while processing the row bind between the test and training data, we eliminated all of the unwanted columns from the measurement data sets prior to executing the rbind\(\) function. Executing the processing steps in this order also improves the runtime speed of the script.  
+
 Finally, we must merge the activity names into the combined test and training data in fulfillment of requirement \#3.
 
 <h2 id="finding">Commentary: Deciding which Variables are the Means and Standard Deviations</h2>
@@ -263,12 +265,12 @@ For the purposes of the *Getting and Cleaning Data* project, the data set that c
 
     aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
 
-Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set.
+Another benefit of the wide tidy data format is that it is easier to use by people who are unfamiliar with the concept of a narrow format tidy data set. Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set.
 
 <h1 id="runscript"> Running the run_analysis.R Script </h1>
 <h2> Background</h2>
 
-The *run_analysis.R* script has been tested on three computers, each with a different operating system. Since some students in the August 2015 Getting and Cleaning Data course reported that their machines ran out of memory when running their version(s) of *run_analysis.R*, at least one set of tests were conducted on a 2009 era laptop, the Sony Vaio VGN-NW240F. The *run_analysis.R* script was tested with a variety of positive and negative test cases against the following acceptance critieria.
+The *run_analysis.R* script has been tested on three computers, each with a different operating system. Since some students in the August 2015 Getting and Cleaning Data course reported that their machines ran out of memory when running their version(s) of *run_analysis.R*, at least one set of tests was conducted on a 2009 era laptop, the Sony Vaio VGN-NW240F. The *run_analysis.R* script was tested with a variety of positive and negative test cases against the following acceptance critieria.
 
 * Presence of required data files, and error handling when required data files were not present
 * Presence of required R packages, and automatic loading of required packages that were not already present
@@ -335,3 +337,4 @@ To run the script, the following steps must be taken. It is assumed that the per
 5. From the /UCI HAR Dataset/train directory, move X_train.txt, y_train.txt, and subject_train.txt to the  *R Working Directory*.
 6. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
 7. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
+8. \(Optional\) View the *tidydata.txt* file that is written to the *R Working Directory* with a text editor.
