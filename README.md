@@ -82,7 +82,7 @@ All thirty participants were tracked on three static postures and three dynamic 
 
 The activity of *walking downstairs* had the lowest experiment frequency in the data set. That is, the person who was least frequently observed walking downstairs was recorded 36 times as walking downstairs. The most frequently observed activity was *walking*, and the person who was most frequently observed in this activity was recorded 95 times as *walking*.
 
-Although the variability in frequency between numbers of recorded experiments by activity / person and potential correlations with "within person" patterns on the accelerometer and gyroscope merits additional analysis, it is beyond the scope of this project. 
+Although the variability in frequency between numbers of recorded experiments by activity / person and potential correlations with "within person" patterns on the accelerometer and gyroscope merits additional analysis, it is beyond the scope of this project.
 
 The data was randomly partitioned into two separate sets of data: 70% of the participants were allocated to a training group, and the remaining 30% were allocated to the test group. The training data was used to train a proposed Multiclass Hardware Friendly Support Vector Machine \(MC-HF-SVM\), described in [Anguita, et. al. 2012](http://www.icephd.org/sites/default/files/IWAAL2012.pdf). The test data was then used to evaluate the effectiveness of the MC-HF-SVM in classifying activities based on the measurements taken by the smartphone.  The classification performance from the HF-SVM was compared to a more traditional Multiclass SVM \(MC-SVM\). The proposed MC-HF-SVM performed comparably to the traditional MC-SVM, indicating that the hardware friendly approach could provide a more economical alternative to the traditional MC-SVM, while maintaining the same level of accuracy.
 
@@ -152,16 +152,16 @@ The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) repository in
         <th>Description</th>
     </tr>
     <tr>
-        <td valign=top>[README.md](https://github.com/lgreski/cleaningdata/blob/master/README.md)</td>
-        <td>A file in markdown format that displays when someone accesses the GitHub repository for a person's submission for the course project.</td>
+        <td valign=top>README.md</td>
+        <td>A file in markdown format that displays when someone accesses the GitHub repository for a person's submission for the course project. The file is located at https://github.com/lgreski/cleaningdata/blob/master/README.md </td>
     </tr>
     <tr>
-        <td valign=top>[Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md)</td>
-        <td>A file in markdown format that describes the variables \(columns\) contained in the tidy data set that must be uploaded to the Coursera website as part of the the project submission process.</td>
+        <td valign=top>Codebook.md</td>
+        <td>A file in markdown format that describes the variables \(columns\) contained in the tidy data set that must be uploaded to the Coursera website as part of the the project submission process. The file is located at https://github.com/lgreski/cleaningdata/blob/master/Codebook.md </td>
     </tr>
     <tr>
-        <td valign=top>[run_analysis.R](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R)</td>
-        <td>An R script that contains all of the R functions used to transform the eight input data files into the required formats for steps 4 and 5 of the assignment instructions.</td>
+        <td valign=top>run_analysis.R</td>
+        <td>An R script that contains all of the R functions used to transform the eight input data files into the required formats for steps 4 and 5 of the assignment instructions. The file is located at https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R </td>
     </tr>
 </table>  
 
@@ -173,8 +173,8 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
         <th>Description</th>
     </tr>
     <tr>
-        <td valign=top>[tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt)</td>
-        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the Technical Research Centre research team.</td>
+        <td valign=top>tidydata.txt</td>
+        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the <em>Human Activity Recognition</em> research team. The File is located at https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt </td>
     </tr>
 </table>
 
