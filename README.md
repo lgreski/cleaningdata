@@ -44,39 +44,39 @@ Reference: HAR@SMARTLAB website, retrieved from https://sites.google.com/site/ha
 All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities, as illustrated below.
 <table>
     <tr>
-        <th>Activity</th>
-        <th>Minimum</th>
-        <th>Maximum</th>
+        <th valign="bottom">Activity</th>
+        <th align="center">Minimum Observations </th>
+        <th align="center">Maximum Observations</th>
     </tr>
     <tr>
         <td>Laying</td>
-        <td>48</td>
-        <td>90</td>
+        <td align="center">48</td>
+        <td align="center">90</td>
     </tr>
     <tr>
         <td>Sitting</td>
-        <td>44</td>
-        <td>85</td>
+        <td align="center">44</td>
+        <td align="center">85</td>
     </tr>
     <tr>
         <td>Standing</td>
-        <td>44</td>
-        <td>89</td>
+        <td align="center">44</td>
+        <td align="center">89</td>
     </tr>
     <tr>
         <td>Walking</td>
-        <td>46</td>
-        <td>95</td>
+        <td align="center">46</td>
+        <td align="center">95</td>
     </tr>
     <tr>
         <td>Walking downstairs</td>
-        <td>36</td>
-        <td>62</td>
+        <td align="center">36</td>
+        <td align="center">62</td>
     </tr>
     <tr>
         <td>Walking upstairs</td>
-        <td>40</td>
-        <td>65</td>
+        <td align="center">40</td>
+        <td align="center">65</td>
     </tr>
 </table>
 The data was randomly partitioned into two separate sets of data: 70% of the participants were allocated to a training group, and the remaining 30% were allocated to the test group. The training data was used to train a proposed Multiclass Hardware Friendly Support Vector Machine \(MC-HF-SVM\), described in [Anguita, et. al. 2012](http://www.icephd.org/sites/default/files/IWAAL2012.pdf). The test data was then used to evaluate the effectiveness of the MC-HF-SVM in classifying activities based on the measurements taken by the smartphone.  The classification performance from the HF-SVM was compared to a more traditional Multiclass SVM \(MC-SVM\). The proposed MC-HF-SVM performed comparably to the traditional MC-SVM, indicating that the hardware friendly approach could provide a more economical alternative to the traditional MC-SVM, while maintaining the same level of accuracy.
