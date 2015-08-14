@@ -174,7 +174,7 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
     </tr>
     <tr>
         <td valign=top>tidydata.txt</td>
-        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the <em>Human Activity Recognition</em> research team. The File is located at https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt </td>
+        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the <em>Human Activity Recognition</em> research team. The file is located at https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt </td>
     </tr>
 </table>
 
