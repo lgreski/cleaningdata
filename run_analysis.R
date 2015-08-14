@@ -112,6 +112,13 @@ theData <- merge(theData,activityData,by.x="activityId",by.y="activityId")
 theDataTbl <- data.table(theData)
 aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
 
+## append "mean of" to front of variable names, using apply then clean up first two names
+## and overwrite existing column names
+theColumns <- colnames(aResult)
+theColumns <- sapply(theColumns, function(x) {paste("MeanOf",x,sep="")})
+setnames(aResult,1:length(theColumns),theColumns)
+setnames(aResult,1,"personId")
+setnames(aResult,2,"activityName")
 ## write the result to a text file
 write.table(aResult,file="tidydata.txt",row.names = FALSE)
 
@@ -121,9 +128,9 @@ myTidyData <- read.table("tidydata.txt",header=TRUE,stringsAsFactors = FALSE)
 ## confirm that data we read back in matches data we wrote out
 ## by comparing first numeric and last numeric column - differences should
 ## sum to zero 
-myComp <- aResult$tBodyAccMeanX - myTidyData$tBodyAccMeanX
-message("Comparing first numeric variable tBodyAccMeanX - output file vs. input")
+myComp <- aResult$MeanOftBodyAccMeanX - myTidyData$MeanOftBodyAccMeanX
+message("Comparing first numeric variable MeanOftBodyAccMeanX - output file vs. input")
 round(sum(myComp),digits = 6)
-myComp <- aResult$fBodyBodyGyroJerkMagStdev - myTidyData$fBodyBodyGyroJerkMagStdev
-message("Comparing last numeric variable fBodyBodyGyroJerkMagStdev - output file vs. input")
+myComp <- aResult$MeanOffBodyBodyGyroJerkMagStdev - myTidyData$MeanOffBodyBodyGyroJerkMagStdev
+message("Comparing last numeric variable MeanOffBodyBodyGyroJerkMagStdev - output file vs. input")
 round(sum(myComp),digits = 6)
