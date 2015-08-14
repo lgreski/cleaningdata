@@ -227,7 +227,7 @@ The following R code can be used to read the tidy data file once it has been cop
     * Assign column names to the measurement data  set, using the previously cleaned feature names, fulfilling requirements \#3 and \#4
     * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-7. Combine the test and training files into a single data set by using the rbind\(\) function, fulfilling requiremend\#1
+7. Combine the test and training files into a single data set by using the rbind\(\) function, fulfilling requirement \#1
 8. Merge the activity labels into the combined measurement data set. At this point, course project requirements \#1 through \#4 are fulfilled
 9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations plus personId and activityName for a total of 68 columns,
