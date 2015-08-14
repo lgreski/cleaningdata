@@ -18,6 +18,16 @@
 theTrainDirectory <- paste(getwd(),"/",sep="")
 theTestDirectory <- paste(getwd(),"/",sep="")
 theDataDirectory <- paste(getwd(),"/",sep="")
+
+## check to see whether required packages are installed, and install if needed
+if (!"dplyr" %in% installed.packages()) {
+     warning("Package dplyr required for this script. Installing dplyr now.")
+     install.packages("dplyr")
+}
+if (!"data.table" %in% installed.packages()) {
+     warning("Package data.table required for this script. Installing data.table now.")
+     install.packages("data.table")
+}
 library(dplyr)
 library(data.table)
 
