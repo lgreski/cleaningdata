@@ -41,7 +41,7 @@ The research team also explained how the data from the inertial sensors were pro
 
 Reference: HAR@SMARTLAB website, retrieved from https://sites.google.com/site/harsmartlab/ on August 12, 2015.
 
-All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities, as illustrated below.
+All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities. There was considerable variability in the number of times each person participated experiments for the various categories of experiments, as illustrated by the following table of minimum / maximum observations per person across each of the activities.
 <table>
     <tr>
         <th valign="bottom">Activity</th>
@@ -79,6 +79,9 @@ All thirty participants were tracked on three static postures and three dynamic 
         <td align="center">65</td>
     </tr>
 </table>
+
+The activity of *walking downstairs* had the lowest experiment frequency in the data set. That is, the person who was least frequently observed walking downstairs was recorded 36 times as walking downstairs. The most frequently observed activity was *walking*, and the person who was most frequently observed in this activity was recorded 95 times as *walking*. 
+
 The data was randomly partitioned into two separate sets of data: 70% of the participants were allocated to a training group, and the remaining 30% were allocated to the test group. The training data was used to train a proposed Multiclass Hardware Friendly Support Vector Machine \(MC-HF-SVM\), described in [Anguita, et. al. 2012](http://www.icephd.org/sites/default/files/IWAAL2012.pdf). The test data was then used to evaluate the effectiveness of the MC-HF-SVM in classifying activities based on the measurements taken by the smartphone.  The classification performance from the HF-SVM was compared to a more traditional Multiclass SVM \(MC-SVM\). The proposed MC-HF-SVM performed comparably to the traditional MC-SVM, indicating that the hardware friendly approach could provide a more economical alternative to the traditional MC-SVM, while maintaining the same level of accuracy.
 
 ### The Data Cleaning Task ###
