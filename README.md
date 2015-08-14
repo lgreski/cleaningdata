@@ -87,7 +87,7 @@ The objective for the *Getting and Cleaning Data* course project is to read the 
 
 Specifically, as outlined in the course project instructions, participants must develop an R script called *run_analysis.R* that:
   1. Merges the separate training and test data files to create one data set.
-  2. Eliminate all measurements other than means and standard deviations from the measurement data, which includes 561 different measurements taken on the smartphone.
+  2. Eliminate all measurements other than means and standard deviations from the measurement data, which contains 561 different measurements taken on the smartphone.
   3. Create descriptive activity names to name each activity in the data set.
   4. Label all variables in the data set with descriptive variable names.
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
@@ -132,7 +132,8 @@ The key challenge to using the dataset  provided by the *Technical Research Cent
         <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_train.txt file.</td>
     </tr>
 </table>
-Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data.
+
+Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data.
 
 Once these data are combined, then the content from the features.txt file must be used to create variable labels for the test and training data.
 
@@ -230,22 +231,47 @@ discussion about key assumptions - all files in R working directory, and explain
 11. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
 <h3 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h3>
+As stated earlier, it was difficult to asertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows \(2,947\) as do the training files \(7,352\). Then it becomes clear that these files should be combined to make a complete test or training data set.
+
+The same challenge existed for naming the columns on the X_test.txt and X_train.txt data files. There are 561 rows in the features.txt file, one per column of data in the test and training measurements files. Since the features.txt file contains characters that are unsuitable for use as column names in an R data table, one must strip out these characters before using the feature data as a set of column names.
+
+Complicating matters is the fact that one must process the files in a specific sequence in order to obtain the desired result, a complete file including personId, activityName, and the 561 columns of measurements. The correct sequence that must be taken separately with the test and training data is:
+
+1. Determine which variables are means or standard deviations. Since this is easier to accomplish with the messy data, as one can search for mean\(\) and std\(\) text strings with the data as provided by the researchers, this step should be taken first
+2. Clean the column names by removing characters that are not appropriate for column names in R
+3. Create a list of the cleaned mean and standard deviation names for use in removing unwanted variables from the data set in fulfillment of requirement \#2
+4. Remove all columns other than standard deviations and means from the measurement data set
+5. Column bind the personId and activityId columns onto the measurement data set
+
+Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame.
+
+Finally, we must merge the activity names into the combined test and training data in fulfillment of requirement \#3.
 
 <h3 id="finding">Commentary: Deciding which Variables are the Means and Standard Deviations</h3>
+As students in the *Getting and Cleaning Data* course worked on the assignment, they engaged in a vigorous discussion about how to determine the number of variables to keep as means or standard deviations per project requirement \#2. The *features_info.txt* file lists all of the base variables collected during the experiments, a total of 33 variables. A total of 17 different statistics were calculated on single variables or pairs of variables, for a total of 561 discrete measurements calculated for each person / activity / experiment combination.
+
+Since there were 33 base variables and a mean and standard deviation was calculated for each one, we have included a total of 66 variables in the output tidy data set.
 
 <h3 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h3>
+In Hadley Wickham's *Tidy Data* paper, he describes two distinct formats for tidy data: narrow and wide \(Wickham, 2014 p. 6\). A wide format tidy data set contains multiple variables in columns, where each column represents one and only one variable for the observational unit. The narrow format "melts" the measurement columns into two distinct columns containing many more rows than a wide data set. These two columns are named "column" and "value", where each row of the narrow form data set contains one measurement of one variable per observational unit.
+
+For the purposes of the *Getting and Cleaning Data* project, the data set that conforms with requirements \#1 - \#4 is a wide format data set. Since there is a straightforward way in R to summarize the 66 means and standard deviations by personId and activityName, then the wide format tidy data set is easiest to produce as per the following line of R code.
+
+    aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
+
+Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set. 
 
 <h2 id="runscript"> Running the run_analysis.R Script </h2>
 <h3> Prerequisites</h3>
 
-The *run_analysis.R* script has been tested on three computers, each with a different operating system. The scripts were tested with positive and negative test cases for the following conditions.
+The *run_analysis.R* script has been tested on three computers, each with a different operating system. Since some students in the August 2015 Getting and Cleaning Data course reported that their machines ran out of memory when running their version(s) of *run_analysis.R*, at least one set of tests were conducted on a 2009 era laptop, the Sony Vaio VGN-NW240F. The *run_analysis.R* script was tested with a variety of positive and negative test cases against the following acceptance critieria.
 
 * Presence of required data files, and error handling when required data files were not present
 * Presence of required R packages, and automatic loading of required packages that were not already present
 * Ability to combine the test data with the training data without causing an out of memory error on the computer
 * Verification that the output tidy data file contained the expected number of rows and columns
 * Verification that the output tidy data file could be read back into R, comparing a subset of columns to ensure the differences were zero
-* Verification that the output files generated by different computers and different operating systems generated files that matched, via the UltraCompare utility.
+* Verification that the output files generated on OS X, Windows 7, and Windows 10 all produced exactly the same tidydata.txt file, via the UltraCompare utility.
 
 The computers and their configurations are described in the following table.
 
