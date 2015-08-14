@@ -11,13 +11,12 @@ Getting and Cleaning Data: README
     * [Commentary: Finding the means and standard deviations](#finding)
     * [Commentary: Output file format: wide vs. narrow tidy dataset](#widevsnarrow)
 * [Running the R Script](#runscript)
-* [Loading the Tidy Data File into R](#readtidydata)
 
 * * *
 
 <h2 id="overview">Overview</h2>
 
-The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software,*  [*Tidy Data*](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
+The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software,*  [Tidy Data*](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
 
   1. Each variable forms a column,
   2. Each observation forms a row, and
@@ -36,7 +35,7 @@ The dataset is the result of an experiment to track people's daily activities wh
 
 >The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
-The research team also explained how the data from the inertial sensors were processed into a file containing 561 features for each experiment.
+The research team also explained how the data from the inertial sensors were processed into a file containing 561 features \(or more accurately, measurements\) for each experiment.
 
 >The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of 561 features was obtained by calculating variables from the time and frequency domain.
 
@@ -188,7 +187,14 @@ Finally, in support of tidy data requirement 3, there is one table output, and t
 
 <h3 id="readoutput">Reading the Output File</h3>
 
-explain how the output file must be read as a single table, with spaces as delimiters. Provide code required to read the file.
+The output data file, tidydata.txt, is a space delimited file that includes quotes around the one character variable in the data set, activityName. The file includes column headings that are described in the accompanying  [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md).
+
+To use the tidy data file, download [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt)) from the GitHub repository and move it into the *R Working directory*.
+
+The following R code can be used to read the tidy data file once it has been copied to the *R Working Directory*.
+
+    theTidyData <- read.table("tidydata.txt",header=TRUE,stringsAsFactors = FALSE)
+
 
 <h2 id="processing">Processing Steps</h2>
 
@@ -196,40 +202,80 @@ discussion about key assumptions - all files in R working directory, and explain
 
 <h3 id="stepsoutline">Summary of Processing Steps in run_analysis.R </h3>
 
-1. Confirm all 8 required files are present in the R working directory
-2. Read activity data and remove special characters from activity names
-3. Read the features file and do the following:
+1. Verify whether required R packages beyond base are installed, and if not present, install them  
+2. Confirm all 8 required files are present in the R working directory
+3. Read activity data and remove special characters from activity names
+4. Read the features file and do the following:
     * Clean the feature identifiers by removing special characters
     * Identify features that are [means or standard deviations](#finding)
-4. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
+5. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
     * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-5. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
+6. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
     * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-6. Combine the test and training files into a single dataset by using the rbind\(\) function
-7. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled
-8. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
+7. Combine the test and training files into a single dataset by using the rbind\(\) function
+8. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled
+9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations,
     * One row per subject \(personId\) activity \(activityName\) combination, and
     * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
-8. Write the output file
-9. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
+10. Write the output file
+11. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
-<h3 id="reading">Commentary: Reading the Input Files</h3>
+<h3 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h3>
 
 <h3 id="finding">Commentary: Deciding which Variables are the Means and Standard Deviations</h3>
 
 <h3 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h3>
 
-<h2 id="runscript"> Running the run_analysis.R Script </h2>
+<h2 id="runscript"> Running the *run_analysis.R* Script </h2>
+<h3> Prerequisites</h3>
 
-Note that the data must be obtained as specified on the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions), the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).  
+The *run\_analysis.R* script has been tested on two computers, each with a different operating system. The computers and their configurations are described in the following table.
 
-<h2 id="readtidydata"> Reading the Tidy Data File </h2>
+<table>
+    <tr>
+        <th>Computer</th>
+        <th>Configuration</th>
+    </tr>
+    <tr>
+        <td>Apple Macbook Pro</td>
+        <td>
+            <ul>
+                <li>Operating system: OS X Yosemite 10.10.4 (14E46)</li>
+                <li>Processor: Intel i5 at 2.6Ghz</li>
+                <li>Memory: 8 gigabytes</li>
+                <li>Disk: 512 gigabytes, solid state drive</li>
+            </ul>
+        </td>
+     </tr>
+     <tr>
+        <td>HP Omen laptop</td>
+        <td>
+            <ul>
+                <li>Operating system: Microsoft Windows 10, 64bit</li>
+                <li>Processor: Intel i7-4710HQ at 2.5Ghz</li>
+                <li>Memory: 16 gigabytes</li>
+                <li>Disk: 512 gigabytes, solid state drive</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The run_analysis.R script automatically installs the required packages if they are not already present in the environment.
+
+To run the script, the following steps must be taken.
+1. Download the data as specified in the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions). The data set from the Coursera instructions is a copy of the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) but stored on a server controlled by the course instructor.
+2. Unzip the file, which will create a directory /UCI HAR Dataset.
+3. From the UCI HAR Dataset directory, move activity_labels.txt and features.txt to the *R Working Directory*.
+4. From the /UCI HAR Dataset/test directory, move X_test.txt, y_test.txt, and subject_test.txt to the  *R Working Directory*.
+5. From the /UCI HAR Dataset/train directory, move X_train.txt, y_train.txt, and subject_train.txt to the  *R Working Directory*.
+6. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
+7. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
