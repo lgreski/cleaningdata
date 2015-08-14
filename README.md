@@ -265,7 +265,7 @@ For the purposes of the *Getting and Cleaning Data* project, the data set that c
 Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set.
 
 <h1 id="runscript"> Running the run_analysis.R Script </h1>
-<h2> Prerequisites</h2>
+<h2> Background</h2>
 
 The *run_analysis.R* script has been tested on three computers, each with a different operating system. Since some students in the August 2015 Getting and Cleaning Data course reported that their machines ran out of memory when running their version(s) of *run_analysis.R*, at least one set of tests were conducted on a 2009 era laptop, the Sony Vaio VGN-NW240F. The *run_analysis.R* script was tested with a variety of positive and negative test cases against the following acceptance critieria.
 
@@ -306,17 +306,21 @@ The computers and their configurations are described in the following table.
         </td>
     </tr>
     <tr>
-       <td valign=top>Sony Vaio VGN-NW240F</td>
+       <td valign=top>Sony Vaio VGN-NW240F laptop</td>
        <td>
            <ul>
                <li>Operating system: Microsoft Windows 7, 64bit</li>
                <li>Processor: Intel Core Duo CPU T6600 at 2.2Ghz</li>
                <li>Memory: 4 gigabytes</li>
-               <li>Disk: 300 gigabytes, 5,400RPM disk drive</li>
+               <li>Disk: 300 gigabytes, 5,400RPM mechanical disk drive</li>
            </ul>
        </td>
    </tr>
 </table>
+
+<h2> Prerequisites </h2>
+
+Given our test results, a computer with at least 2Ghz of processing power, 4Gb of memory, and 10Gb of free disk space should be sufficient to process the script with R.
 
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The run_analysis.R script automatically installs the required packages if they are not already present in the environment.
 
