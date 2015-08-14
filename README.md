@@ -100,35 +100,35 @@ The key challenge to using the data set  provided by the *Technical Research Cen
         <th>Description</th>
     </tr>
     <tr>
-        <td>activity_labels.txt</td>
+        <td valign=top>activity_labels.txt</td>
         <td>File containing six rows of data, where each row contains an activity identifier and an activity description, a text label to associate with the y_train.txt and y_test.txt files. The numeric identifier and text labels are separated by a blank space. The activity label words are delmited by an underscore when an activity contains more than a single word. </td>
     </tr>
     <tr>
-        <td>features.txt</td>
+        <td valign=top>features.txt</td>
         <td>File listing the 561 different measurements taken from the smartphone each time a person was measured for one of the six activities monitored during the experiment. Data is listed in one row per measurement, where the line number in the file is the assumed key to match against the test and training data files. </td>
     </tr>
     <tr>
-        <td>subject_test.txt</td>
+        <td valign=top>subject_test.txt</td>
         <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_test.txt file.  </td>
     </tr>
     <tr>
-        <td>x_test.txt</td>
+        <td valign=top>x_test.txt</td>
         <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
     </tr>
     <tr>
-        <td>y_test.txt</td>
+        <td valign=top>y_test.txt</td>
         <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_test.txt file.</td>
     </tr>
     <tr>
-        <td>subject_train.txt</td>
+        <td valign=top>subject_train.txt</td>
         <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_train.txt file.  </td>
     </tr>
     <tr>
-        <td>x_train.txt</td>
+        <td valign=top>x_train.txt</td>
         <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
     </tr>
     <tr>
-        <td>y_train.txt</td>
+        <td valign=top>y_train.txt</td>
         <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_train.txt file.</td>
     </tr>
 </table>
