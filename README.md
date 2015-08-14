@@ -9,14 +9,14 @@ Getting and Cleaning Data: README
     * [Outline of Steps in run_analysis.R](#stepsoutline)
     * [Commentary: Reading the input files](#reading)
     * [Commentary: Finding the means and standard deviations](#finding)
-    * [Commentary: Output file format: wide vs. narrow tidy dataset](#widevsnarrow)
+    * [Commentary: Output file format - wide vs. narrow tidy data set](#widevsnarrow)
 * [Running the R Script](#runscript)
 
 * * *
 
 <h2 id="overview">Overview</h2>
 
-The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software*, [Tidy Data](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
+The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software*, [Tidy Data](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a data set tidy, including:
 
   1. Each variable forms a column,
   2. Each observation forms a row, and
@@ -31,7 +31,7 @@ As described in *The Nexus of Forces: Social, Mobile, Cloud, and Information,* G
  mobile experiences. Mobile devices are a *platform* for effective social networking and new ways of work. Social links *people* to their work and each other in new and unexpected ways. Cloud enables the *delivery* of information and functionality to users and systems. The forces of the Nexus are intertwined to create a user-driven ecosystem of modern computing. Reference: Howard, C. et. al., *The Nexus of Forces: Social, Mobile, Cloud, and Information,* Gartner Inc., Stamford CT, June 2012.
 
 Wearable computing is at the center of the nexus of forces. It uses mobile devices as a platform to generate large amounts of data about people's behavior. Scientists are only now beginning to explore ways that mobile computing and big data can help us better understand human behavior. One such study was undertaken by Jorge L. Reyes-Ortiz et. al. from the *Technical Research Centre for Dependency Care and Autonomous Living*. In April 2013 they released [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
-The dataset is the result of an experiment to track people's daily activities while a Samsung Galaxy SII smartphone was attached to each participant's waist. The smartphones contained embedded inertial sensors (an accelerometer and gyroscope) that were used to track 561 different measurements. Per the [HCI@SMARTLAB](https://sites.google.com/site/harsmartlab/) website, a group of 30 volunteers were tracked on six basic activities that were measured with 3-dimensional \(X, Y, and Z axes\) for both linear acceleration and angular velocity.
+The data set is the result of an experiment to track people's daily activities while a Samsung Galaxy SII smartphone was attached to each participant's waist. The smartphones contained embedded inertial sensors (an accelerometer and gyroscope) that were used to track 561 different measurements. Per the [HCI@SMARTLAB](https://sites.google.com/site/harsmartlab/) website, a group of 30 volunteers were tracked on six basic activities that were measured with 3-dimensional \(X, Y, and Z axes\) for both linear acceleration and angular velocity.
 
 >The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
 
@@ -93,7 +93,7 @@ Specifically, as outlined in the course project instructions, participants must 
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 <h4 id="considerations"> Cleaning Considerations </h4>
-The key challenge to using the dataset  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other and how to combine them into a single data set for subsequent analysis. The contents of the eight files are summarized below.
+The key challenge to using the data set  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other and how to combine them into a single data set for subsequent analysis. The contents of the eight files are summarized below.
 <table>
     <tr>
         <th>File</th>
@@ -147,20 +147,20 @@ The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) repository in
         <th>Description</th>
     </tr>
     <tr>
-        <td>README.md</td>
+        <td valign=top>README.md</td>
         <td>A file in markdown format that displays when someone accesses the GitHub repository for a person's submission for the course project.</td>
     </tr>
     <tr>
-        <td>Codebook.md</td>
+        <td valign=top>Codebook.md</td>
         <td>A file in markdown format that describes the variables \(columns\) contained in the tidy data set that must be uploaded to the Coursera website as part of the the project submission process.</td>
     </tr>
     <tr>
-        <td>run_analysis.R</td>
+        <td valign=top>run_analysis.R</td>
         <td>An R script that contains all of the R functions used to transform the eight input data files into the required formats for steps 4 and 5 of the assignment instructions.</td>
     </tr>
 </table>  
 
-A fourth file, the output from step 5 listed in *The Data Cleaning Task* section above must be uploaded to the Coursera website as part of the assignment submission process.
+A fourth file, the output from step 5 listed in *The Data Cleaning Task* section above must be uploaded to the Coursera website as part of the assignment submission process. We have also included this file in the GitHub repository for easy reference.
 
 <table>
     <tr>
@@ -168,7 +168,7 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
         <th>Description</th>
     </tr>
     <tr>
-        <td>tidydata.txt</td>
+        <td valign=top>tidydata.txt</td>
         <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the *Technical Research Centre* research team.</td>
     </tr>
 </table>
@@ -213,16 +213,16 @@ discussion about key assumptions - all files in R working directory, and explain
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
-    * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
+    * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
 6. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names
-    * Remove unnecessary columns from the measurement dataset to fulfill requirement \#2 from the project instructions
+    * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-7. Combine the test and training files into a single dataset by using the rbind\(\) function
-8. Merge the activity labels into the combined measurement dataset. At this point, course project requirements \#1 through \#4 are fulfilled
+7. Combine the test and training files into a single data set by using the rbind\(\) function
+8. Merge the activity labels into the combined measurement data set. At this point, course project requirements \#1 through \#4 are fulfilled
 9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations,
     * One row per subject \(personId\) activity \(activityName\) combination, and
@@ -259,7 +259,7 @@ For the purposes of the *Getting and Cleaning Data* project, the data set that c
 
     aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
 
-Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set. 
+Therefore, the data set for requirement \#5 that was submitted for this project is a wide format tidy data set.
 
 <h2 id="runscript"> Running the run_analysis.R Script </h2>
 <h3> Prerequisites</h3>
@@ -281,7 +281,7 @@ The computers and their configurations are described in the following table.
         <th>Configuration</th>
     </tr>
     <tr>
-        <td>Apple Macbook Pro</td>
+        <td valign=top>Apple Macbook Pro</td>
         <td>
             <ul>
                 <li>Operating system: OS X Yosemite 10.10.4 (14E46)</li>
@@ -292,7 +292,7 @@ The computers and their configurations are described in the following table.
         </td>
      </tr>
      <tr>
-        <td>HP Omen laptop</td>
+        <td valign=top>HP Omen laptop</td>
         <td>
             <ul>
                 <li>Operating system: Microsoft Windows 10, 64bit</li>
@@ -303,7 +303,7 @@ The computers and their configurations are described in the following table.
         </td>
     </tr>
     <tr>
-       <td>Sony Vaio VGN-NW240F</td>
+       <td valign=top>Sony Vaio VGN-NW240F</td>
        <td>
            <ul>
                <li>Operating system: Microsoft Windows 7, 64bit</li>
@@ -317,7 +317,9 @@ The computers and their configurations are described in the following table.
 
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The run_analysis.R script automatically installs the required packages if they are not already present in the environment.
 
-To run the script, the following steps must be taken.
+<h3> run_analysis.R Runbook </h3>
+To run the script, the following steps must be taken. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set.
+
 1. Download the data as specified in the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions). The data set from the Coursera instructions is a copy of the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) but stored on a server controlled by the course instructor.
 2. Unzip the file, which will create a directory /UCI HAR Dataset.
 3. From the UCI HAR Dataset directory, move activity_labels.txt and features.txt to the *R Working Directory*.
