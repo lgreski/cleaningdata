@@ -33,7 +33,7 @@ As described in *The Nexus of Forces: Social, Mobile, Cloud, and Information,* G
 Wearable computing is at the center of the nexus of forces. It uses mobile devices as a platform to generate large amounts of data about people's behavior. Scientists are only now beginning to explore ways that mobile computing and big data can help us better understand human behavior. One such study was undertaken by Jorge L. Reyes-Ortiz et. al. from the *Technical Research Centre for Dependency Care and Autonomous Living*. In April 2013 they released [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 The data set is the result of an experiment to track people's daily activities while a Samsung Galaxy SII smartphone was attached to each participant's waist. The smartphones contained embedded inertial sensors (an accelerometer and gyroscope) that were used to track 561 different measurements. Per the [HCI@SMARTLAB](https://sites.google.com/site/harsmartlab/) website, a group of 30 volunteers were tracked on six basic activities that were measured with 3-dimensional \(X, Y, and Z axes\) for both linear acceleration and angular velocity.
 
->The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+>The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was \[sic\] selected for generating the training data and 30% the test data.
 
 The research team also explained how the data from the inertial sensors were processed into a file containing 561 features \(or more accurately, measurements\) for each experiment.
 
@@ -93,7 +93,7 @@ Specifically, as outlined in the course project instructions, participants must 
   5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 <h3 id="considerations"> Cleaning Considerations </h3>
-The key challenge to using the data set  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in simple business terms how the different files relate to each other and how to combine them into a single data set for subsequent analysis. The contents of the eight files are summarized below.
+The key challenge to using the data set  provided by the *Technical Research Centre* is that there is no single piece of documentation that explains in straightforward business terms how the different files relate to each other and how to combine them into a single data set for subsequent analysis. The contents of the eight files are summarized below.
 <table>
     <tr>
         <th>File</th>
@@ -169,7 +169,7 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
     </tr>
     <tr>
         <td valign=top>tidydata.txt</td>
-        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the *Technical Research Centre* research team.</td>
+        <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the Technical Research Centre research team.</td>
     </tr>
 </table>
 
@@ -225,11 +225,12 @@ The following R code can be used to read the tidy data file once it has been cop
 7. Combine the test and training files into a single data set by using the rbind\(\) function
 8. Merge the activity labels into the combined measurement data set. At this point, course project requirements \#1 through \#4 are fulfilled
 9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
-    * Each variable forms a column: means of the 66 variables that were means or standard deviations,
+    * Each variable forms a column: means of the 66 variables that were means or standard deviations plus personId and activityName for a total of 68 columns,
     * One row per subject \(personId\) activity \(activityName\) combination, and
     * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
-10. Write the output file
-11. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
+10. Add "MeanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data  
+11. Write the output file
+12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
 <h2 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h2>
 As stated earlier, it was difficult to asertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows \(2,947\) as do the training files \(7,352\). Then it becomes clear that these files should be combined to make a complete test or training data set.
