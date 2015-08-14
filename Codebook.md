@@ -39,6 +39,19 @@ In all of the measurement variables, the text tokens have the following meanings
         <td>Measurement of the maginitude of the Euclidean norm \(i.e. distance from the origin\) of a three-dimensional signal</td>
     </tr>
     <tr>
+        <td>Mean</td>
+        <td>Indicates that the measurement is a mean within the original *Human Activity Recognition* data set</td>
+    </tr>
+
+    <tr>
+        <td>MeanOf</td>
+        <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for each person of a given variable from the original *Human Activity Recognition* data set</td>
+    </tr>
+    <tr>
+        <td>Stdev</td>
+        <td>Indicates that the measurement is a standard deviation within the original *Human Activity Recognition* data set</td>
+    </tr>
+    <tr>
         <td>t</td>
         <td>Measurement based on the "time" domain</td>
     </tr>
@@ -104,7 +117,7 @@ The following table describes all of the columns in the [tidydata.txt](https://g
         </ul> </td>
     </tr>
     <tr> <td valign=top align=right> 3 </td> <td valign=top> MeanOftBodyAccMeanX </td>  
-    <td> dMean of time domain body acceleration means in X dimension </td> </tr>
+    <td> Mean of time domain body acceleration means in X dimension </td> </tr>
     <tr> <td valign=top align=right> 4 </td> <td valign=top> MeanOftBodyAccMeanY </td>
     <td> Mean of time domain body acceleration means in Y dimension </td> </tr>
     <tr> <td valign=top align=right> 5 </td> <td valign=top> MeanOftBodyAccMeanZ </td> <td> Mean of time dimension body acceleration means in Z dimension </td> </tr>
@@ -161,9 +174,9 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr> <td valign=top align=right> 31 </td> <td valign=top> MeanOffBodyGyroMeanZ </td>
     <td> Mean of frequency domain body gyroscope means in Z dimension </td> </tr>
     <tr> <td valign=top align=right> 32 </td> <td valign=top> MeanOffBodyAccMagMean </td>
-    <td> Mean of frequency domain body acceleration magnitued means </td> </tr>
+    <td> Mean of frequency domain body acceleration magnitude means </td> </tr>
     <tr> <td valign=top align=right> 33 </td> <td valign=top> MeanOffBodyBodyAccJerkMagMean </td>
-    <td> Mean of frequency domain body body accelartion jerk magnitude means </td> </tr>
+    <td> Mean of frequency domain body body acceleration jerk magnitude means </td> </tr>
     <tr> <td valign=top align=right> 34 </td> <td valign=top> MeanOffBodyBodyGyroMagMean </td>
     <td> Mean of frequency domain body body gyroscope magnitude means </td> </tr>
     <tr> <td valign=top align=right> 35 </td> <td valign=top> MeanOffBodyBodyGyroJerkMagMean </td>
