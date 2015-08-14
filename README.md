@@ -16,7 +16,7 @@ Getting and Cleaning Data: README
 
 <h2 id="overview">Overview</h2>
 
-The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software,*  [Tidy Data*](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
+The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software*, [Tidy Data](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a dataset tidy, including:
 
   1. Each variable forms a column,
   2. Each observation forms a row, and
@@ -30,7 +30,7 @@ As described in *The Nexus of Forces: Social, Mobile, Cloud, and Information,* G
 >In the Nexus of Forces, information is the *context* for delivering enhanced social and
  mobile experiences. Mobile devices are a *platform* for effective social networking and new ways of work. Social links *people* to their work and each other in new and unexpected ways. Cloud enables the *delivery* of information and functionality to users and systems. The forces of the Nexus are intertwined to create a user-driven ecosystem of modern computing. Reference: Howard, C. et. al., *The Nexus of Forces: Social, Mobile, Cloud, and Information,* Gartner Inc., Stamford CT, June 2012.
 
-Wearable computing is at the center of the nexus of forces. It uses mobile devices as a platform to generate large amounts of data about people's behavior. Scientists are only now beginning to explore ways that mobile computing and big data can help us better understand human behavior. One such study was undertaken by Jorge L. Reyes-Ortiz et. al. from the Technical Research Centre for Dependency Care and Autonomous Living. In April 2013 they released [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+Wearable computing is at the center of the nexus of forces. It uses mobile devices as a platform to generate large amounts of data about people's behavior. Scientists are only now beginning to explore ways that mobile computing and big data can help us better understand human behavior. One such study was undertaken by Jorge L. Reyes-Ortiz et. al. from the *Technical Research Centre for Dependency Care and Autonomous Living*. In April 2013 they released [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 The dataset is the result of an experiment to track people's daily activities while a Samsung Galaxy SII smartphone was attached to each participant's waist. The smartphones contained embedded inertial sensors (an accelerometer and gyroscope) that were used to track 561 different measurements. Per the [HCI@SMARTLAB](https://sites.google.com/site/harsmartlab/) website, a group of 30 volunteers were tracked on six basic activities that were measured with 3-dimensional \(X, Y, and Z axes\) for both linear acceleration and angular velocity.
 
 >The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. They performed a protocol of activities composed of six basic activities: three static postures (standing, sitting, lying) and three dynamic activities (walking, walking downstairs and walking upstairs). The experiment also included postural transitions that occurred between the static postures. These are: stand-to-sit, sit-to-stand, sit-to-lie, lie-to-sit, stand-to-lie, and lie-to-stand. All the participants were wearing a smartphone (Samsung Galaxy S II) on the waist during the experiment execution. We captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz using the embedded accelerometer and gyroscope of the device. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
@@ -235,12 +235,11 @@ discussion about key assumptions - all files in R working directory, and explain
 
 <h3 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h3>
 
-<h2 id="runscript"> Running the *run_analysis.R* Script </h2>
+<h2 id="runscript"> Running the run_analysis.R Script </h2>
 <h3> Prerequisites</h3>
 
-The *run\_analysis.R* script has been tested on two computers, each with a different operating system. The test case was to run the script on different computers and compare the output files produced on each computer to confirm that there were no differences in the content produced on the different computers.
+The *run_analysis.R* script has been tested on three computers, each with a different operating system. The scripts were tested with positive and negative test cases for the following conditions.
 
-The scripts were tested with positive and negative test cases for the following conditions.
 * Presence of required data files, and error handling when required data files were not present
 * Presence of required R packages, and automatic loading of required packages that were not already present
 * Ability to combine the test data with the training data without causing an out of memory error on the computer
@@ -277,6 +276,17 @@ The computers and their configurations are described in the following table.
             </ul>
         </td>
     </tr>
+    <tr>
+       <td>Sony Vaio VGN-NW240F</td>
+       <td>
+           <ul>
+               <li>Operating system: Microsoft Windows 7, 64bit</li>
+               <li>Processor: Intel Core Duo CPU T6600 at 2.2Ghz</li>
+               <li>Memory: 4 gigabytes</li>
+               <li>Disk: 300 gigabytes, 5,400RPM disk drive</li>
+           </ul>
+       </td>
+   </tr>
 </table>
 
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The run_analysis.R script automatically installs the required packages if they are not already present in the environment.
