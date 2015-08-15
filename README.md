@@ -206,7 +206,7 @@ To use the tidy data file, download [tidydata.txt](https://github.com/lgreski/cl
 
 The following R code can be used to read the tidy data file once it has been copied to the *R Working Directory*.
 
-    theTidyData <- read.table("tidydata.txt",header=TRUE,stringsAsFactors = FALSE)
+    theTidyData <- read.table("tidydata.txt",header=TRUE)
 
 
 <h1 id="processing">Processing Steps</h1>
