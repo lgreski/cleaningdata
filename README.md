@@ -16,7 +16,7 @@ Getting and Cleaning Data: README
 
 <h1 id="overview">Overview</h1>
 
-The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software*, [Tidy Data](http://http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a data set tidy, including:
+The [lgreski/cleaningdata](http://github.com/lgreski/cleaningdata) GitHub repository includes the files required to fulfill project requirements for the *Getting and Cleaning Data* course offered by Johns Hopkins University's School of Public Health via Coursera during August 2015. The objective of the course project is to convert "messy" data into a *tidy* format, where the definition of *tidy* is based on Hadley Wickham's 2014 paper in the *Journal of Statistical Software*, [Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf). In the paper, Wickham lists three characteristics that make a data set tidy, including:
 
   1. Each variable forms a column,
   2. Each observation forms a row, and
