@@ -220,7 +220,7 @@ The following R code can be used to read the tidy data file once it has been cop
 3. Read activity data and remove special characters from activity names
 4. Read the features file and do the following:
     * Clean the feature identifiers by removing special characters
-    * Identify features that are [means or standard deviations](#finding)
+    * Identify features that are means or standard deviations
 5. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
@@ -248,7 +248,7 @@ As stated earlier, it was difficult to asertain from the documentation provided 
 
 The same challenge existed for naming the columns on the X_test.txt and X_train.txt data files. There are 561 rows in the features.txt file, one per column of data in the test and training measurements files. Since the features.txt file contains characters that are unsuitable for use as column names in an R data table, one must strip out these characters before using the feature data as a set of column names.
 
-Complicating matters is the fact that one must process the files in a specific sequence in order to obtain the desired result, a complete file including personId, activityName, and the [66 columns of measurements](#finding) that are either means or standard deviations. The correct sequence that must be taken separately with the test and training data is:
+Complicating matters is the fact that one must process the files in a specific sequence in order to obtain the desired result, a complete file including personId, activityName, and the 66 columns of measurements that are either means or standard deviations. The correct sequence that must be taken separately with the test and training data is:
 
 1. Determine which variables are means or standard deviations. Since this is easier to accomplish with the messy data, as one can search for mean\(\) and std\(\) text strings with the data as provided by the researchers, this step should be taken first
 2. Clean the column names by removing characters that are not appropriate for column names in R
