@@ -221,6 +221,7 @@ The following R code can be used to read the tidy data file once it has been cop
 4. Read the features file and do the following:
     * Clean the feature identifiers by removing special characters
     * Identify features that are means or standard deviations
+    * Correct the typographical error on variables named 'BodyBody', because there is no other reference to any variables containing "BodyBody"
 5. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
