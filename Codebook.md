@@ -175,12 +175,12 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Z dimension </td> </tr>
     <tr> <td valign=top align=right> 32 </td> <td valign=top> MeanOffBodyAccMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 33 </td> <td valign=top> MeanOffBodyBodyAccJerkMagMean </td>
-    <td> Numeric variable measuring the mean of frequency domain body body acceleration jerk magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 34 </td> <td valign=top> MeanOffBodyBodyGyroMagMean </td>
-    <td> Numeric variable measuring the mean of frequency domain body body gyroscope magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 35 </td> <td valign=top> MeanOffBodyBodyGyroJerkMagMean </td>
-    <td> Numeric variable measuring the mean of frequency domain body body gyroscope jerk magnitude means </td> </tr>
+    <tr> <td valign=top align=right> 33 </td> <td valign=top> MeanOffBodyAccJerkMagMean </td>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk magnitude means </td> </tr>
+    <tr> <td valign=top align=right> 34 </td> <td valign=top> MeanOffBodyGyroMagMean </td>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope magnitude means </td> </tr>
+    <tr> <td valign=top align=right> 35 </td> <td valign=top> MeanOffBodyGyroJerkMagMean </td>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope jerk magnitude means </td> </tr>
     <tr> <td valign=top align=right> 36 </td> <td valign=top> MeanOftBodyAccStdevX </td>
     <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in X dimension </td> </tr>
     <tr> <td valign=top align=right> 37 </td> <td valign=top> MeanOftBodyAccStdevY </td>
@@ -241,10 +241,10 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Z dimension </td> </tr>
     <tr> <td valign=top align=right> 65 </td> <td valign=top> MeanOffBodyAccMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 66 </td> <td valign=top> MeanOffBodyBodyAccJerkMagStdev </td>
-    <td> Numeric variable measuring the mean of frequency domain body body acceleration jerk magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 67 </td> <td valign=top> MeanOffBodyBodyGyroMagStdev </td>
-    <td> Numeric variable measuring the mean of frequency domain body body gyroscope magnitude standard deviations  </td> </tr>
-    <tr> <td valign=top align=right> 68 </td> <td valign=top> MeanOffBodyBodyGyroJerkMagStdev </td>
-    <td> Numeric variable measuring the mean of frequency domain body body gyroscope jerk magnitude standard deviations  </td> </tr>
+    <tr> <td valign=top align=right> 66 </td> <td valign=top> MeanOffBodyAccJerkMagStdev </td>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk magnitude standard deviations </td> </tr>
+    <tr> <td valign=top align=right> 67 </td> <td valign=top> MeanOffBodyGyroMagStdev </td>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope magnitude standard deviations  </td> </tr>
+    <tr> <td valign=top align=right> 68 </td> <td valign=top> MeanOffBodyGyroJerkMagStdev </td>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope jerk magnitude standard deviations  </td> </tr>
 </table>
