@@ -63,6 +63,7 @@ theStdsIndexes <- featureData[grep("std()",featureData$V2),1]
 ## process featureData to clean up column names and apply as column names to test data 
 featureData[,2] <- sub("mean","Mean",featureData[,2])
 featureData[,2] <- sub("std","Stdev",featureData[,2])
+featureData[,2] <- sub("BodyBody","Body",featureData[,2])
 ## strip out () from featureData
 featureData[,2] <- sub("\\(\\)","",featureData[,2])
 
