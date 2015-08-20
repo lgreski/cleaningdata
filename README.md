@@ -274,7 +274,7 @@ Since there were 33 base variables and a mean and standard deviation was calcula
 
 In Hadley Wickham's *Tidy Data* paper, he describes two distinct formats for tidy data: narrow and wide \(Wickham, 2014 p. 6\). A wide format tidy data set contains multiple variables in columns, where each column represents one and only one variable for the observational unit. The narrow format "melts" the measurement columns into two distinct columns containing many more rows than a wide data set. These two columns are named "column" and "value", where each row of the narrow form data set contains one measurement of one variable per observational unit.
 
-For the purposes of the *Getting and Cleaning Data* project, the data set that conforms with requirements \#1 - \#4 is a wide format data set. Since there is a straightforward way in R to summarize the 66 means and standard deviations by personId and activityName, then the wide format tidy data set is easiest to produce as per the following line of R code.
+For the purposes of the *Getting and Cleaning Data* project, the data set that conforms with requirements \#1 - \#4 is a wide format data set. It is not "tidy" because each row represents a specific run of an experiment for one person / activity, but there is no column in the data set to distinguish the unique experiments. Since there is a straightforward way in R to summarize the 66 means and standard deviations by personId and activityName, then the wide format tidy data set is easiest to produce as per the following line of R code.
 
     aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
 
