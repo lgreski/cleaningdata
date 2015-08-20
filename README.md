@@ -144,7 +144,7 @@ The key challenge to using the data set  provided by the *Technical Research Cen
     </tr>
 </table>
 
-Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data.
+Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data. Also, the labels provided in features.txt are not completely accurate, as the bandsEnergy() variable labels are missing X, Y, and Z dimensions for 126 of the 561 variables, and features.txt also contains "bodyBody" variable names that are obvious typographical errors. 
 
 Once these data are combined, then the content from the features.txt file must be used to create variable labels for the test and training data.
 
