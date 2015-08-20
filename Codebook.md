@@ -36,20 +36,20 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Mag</td>
-        <td>Measurement of the maginitude of the Euclidean norm \(i.e. distance from the origin\) of a three-dimensional signal</td>
+        <td>Measurement of the maginitude of the Euclidean norm (i.e. distance from the origin) of a three-dimensional signal</td>
     </tr>
     <tr>
         <td>Mean</td>
-        <td>Indicates that the measurement is a mean within the original *Human Activity Recognition* data set</td>
+        <td>Indicates that the measurement is a mean within the original <i>Human Activity Recognition</i> data set</td>
     </tr>
 
     <tr>
         <td>MeanOf</td>
-        <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for each person of a given variable from the original *Human Activity Recognition* data set</td>
+        <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for each person of a given variable from the original <i>Human Activity Recognition</i> data set</td>
     </tr>
     <tr>
         <td>Stdev</td>
-        <td>Indicates that the measurement is a standard deviation within the original *Human Activity Recognition* data set</td>
+        <td>Indicates that the measurement is a standard deviation within the original <i>Human Activity Recognition</i> data set</td>
     </tr>
     <tr>
         <td>t</td>
