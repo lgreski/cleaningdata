@@ -101,7 +101,7 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr>
         <td align=right valign=top>1</td>
         <td valign=top>personId</td>
-        <td>Numeric identifier that indicates the participant or subject of the experiment. The original research study included 30 participants, so this variable has a range of numeric values  from 1 - 30. No further information beyond an id number was provided by the original research team. <br>Format: numeric </td>
+        <td>Numeric identifier that indicates the participant or subject of the experiment. The original research study included 30 participants, so this variable has a range of numeric values  from 1 - 30. No further information beyond an id number was provided by the original research team.</td>
     </tr>
     <tr>
         <td align=right valign=top>2</td>
