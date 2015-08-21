@@ -144,7 +144,7 @@ The key challenge to using the data set  provided by the *Technical Research Cen
     </tr>
 </table>
 
-Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data. Also, the labels provided in features.txt are not completely accurate, as the bandsEnergy() variable labels are missing X, Y, and Z dimensions for 126 of the 561 variables, and features.txt also contains "bodyBody" variable names that are obvious typographical errors. 
+Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data. Also, the labels provided in features.txt are not completely accurate, as the bandsEnergy() variable labels are missing X, Y, and Z dimensions for 126 of the 561 variables, and features.txt also contains "bodyBody" variable names that are obvious typographical errors.
 
 Once these data are combined, then the content from the features.txt file must be used to create variable labels for the test and training data.
 
@@ -183,6 +183,10 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
         <td>The output file from step 5 of the course project instructions, a tidy data set that includes descriptive variable names based on the features.txt file provided by the <em>Human Activity Recognition</em> research team. The file is located at https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt </td>
     </tr>
 </table>
+
+<h2 id="namingvariables">Descriptive Variable Names</h2>
+
+Text goes here. 
 
 <h2 id="tidydesc">Output File: why is it tidy?</h2>
 
