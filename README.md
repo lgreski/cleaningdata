@@ -4,6 +4,7 @@ Getting and Cleaning Data: README
     * [Project Summary](#summary)
     * [Repository Contents](#contents)
     * [Variable Names: content vs. ease of use in coding](#namingvariables)
+    * [Average: using the mean as a measure of central tendency](#average)
     * [Output File: why is it tidy?](#tidydesc)
     * [Reading the output file](#readoutput)
 * [Processing Steps](#processing)
@@ -96,7 +97,7 @@ Specifically, as outlined in the course project instructions, participants must 
   2. Eliminate all measurements other than means and standard deviations from the measurement data, which contains 561 different measurements taken on the smartphone.
   3. Create descriptive activity names to name each activity in the data set.
   4. Label all variables in the data set with descriptive variable names.
-  5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
+  5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the [average](#averagereq) of each variable for each activity.
 
 Additional project requirements include:
 * Submit a link to a [GitHub repository](https://github.com/lgreski/cleaningdata) with the code for performing your analysis. The code should have a file [run_analysis.R](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) in the main directory that can be run as long as the Samsung data is in the working directory
@@ -189,7 +190,11 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
 
 In selecting variable names for the data set one must strike a balance between usability in coding and ease of understanding the meaning of a variable. Once a column name is more than 15 - 20 characters in length, it becomes unwieldy for use in a coding system where we expect to be able to read the code in lines of 80 columns or less. Relative to the V1 - V561 that are automatically assigned to the *X_test.txt* and *X_train.txt* files when loaded into R, the content from *features.txt* \(as we modified it\) provides a set of relatively descriptive variable names at a variable name length that is reasonable for command line programming.
 
-However, the abbreviations used in *features.txt* are not intuitive to most of the participants in the *Getting and Cleaning Data* course, as evidenced by the large volume of questions on the Discussion Forum about what the variables mean. Therefore, we chose to provide detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts such as *Mag* being the  magnitude as the Euclidean norm \(length of a vector from the origin of a multidimensional coordinate system\) in the variable description in the Codebook, rather than trying to communicate this in a variable name.   
+However, the abbreviations used in *features.txt* are not intuitive to most of the participants in the *Getting and Cleaning Data* course, as evidenced by the large volume of questions on the Discussion Forum about what the variables mean. Therefore, we chose to provide detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts such as *Mag* being the  magnitude as the Euclidean norm \(length of a vector from the origin of a multidimensional coordinate system\) in the variable description in the Codebook, rather than trying to communicate this in a variable name.
+
+<h2 id="average">Average: using the mean as a measure of central tendency </h2>
+
+<A href="averagereq">Requirement #5</A> specifies that we calculate an average for each variable in the tidy data set, grouped by person and activity. On the Discussion Forum there was a significant debate over whether we should interpret this term, *average* as a mean, median, or mode. All three of these statistics are measures of central tendency, that is, they attempt to measure the center of a distribution of numbers. However, the statistic most commonly used for "average" is the mean, so we have calculated means for our tidy data set rather than medians or modes. 
 
 <h2 id="tidydesc">Output File: why is it tidy?</h2>
 
