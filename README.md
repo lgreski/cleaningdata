@@ -1,4 +1,4 @@
-Getting and Cleaning Data: README
+<A name="top">Getting and Cleaning Data: README</a>
 =================================
 * [Overview](#overview)
     * [Project Summary](#summary)
@@ -97,7 +97,7 @@ Specifically, as outlined in the course project instructions, participants must 
   2. Eliminate all measurements other than means and standard deviations from the measurement data, which contains 561 different measurements taken on the smartphone.
   3. Create descriptive activity names to name each activity in the data set.
   4. Label all variables in the data set with descriptive variable names.
-  5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the <a name="averagereq">average</a> of each variable for each activity.
+  5. Create an output data file from the result of steps 1 - 4, an independent tidy data set that contains the average of each variable for each activity.
 
 Additional project requirements include:
 * Submit a link to a [GitHub repository](https://github.com/lgreski/cleaningdata) with the code for performing your analysis. The code should have a file [run_analysis.R](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) in the main directory that can be run as long as the Samsung data is in the working directory
@@ -194,7 +194,7 @@ However, the abbreviations used in *features.txt* are not intuitive to most of t
 
 <h2 id="average">Average: using the mean as a measure of central tendency </h2>
 
-<a href="#averagereq">Requirement \#5</a> specifies that we calculate an average for each variable in the tidy data set, grouped by person and activity. On the Discussion Forum there was a significant debate over whether we should interpret this term, *average* as a mean, median, or mode. All three of these statistics are measures of central tendency, that is, they attempt to measure the center of a distribution of numbers. However, the statistic most commonly used for "average" is the mean, so we have calculated means for our tidy data set rather than medians or modes.
+Requirement \#5 specifies that we calculate an average for each variable in the tidy data set, grouped by person and activity. On the Discussion Forum there was a significant debate over whether we should interpret this term, *average* as a mean, median, or mode. All three of these statistics are measures of central tendency, that is, they attempt to measure the center of a distribution of numbers. However, the statistic most commonly used for "average" is the mean, so we have calculated means for our tidy data set rather than medians or modes.
 
 <h2 id="tidydesc">Output File: why is it tidy?</h2>
 
@@ -363,3 +363,5 @@ A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or 
 6. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
 7. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
 8. \(Optional\) View the *tidydata.txt* file that is written to the *R Working Directory* with a text editor.
+
+Return to <a href="#top"> top of document</a>
