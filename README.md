@@ -3,7 +3,7 @@ Getting and Cleaning Data: README
 * [Overview](#overview)
     * [Project Summary](#summary)
     * [Repository Contents](#contents)
-    * [Variable Names: Content vs. Ease in Coding](#namingvariables)
+    * [Variable Names: content vs. ease of use in coding](#namingvariables)
     * [Output File: why is it tidy?](#tidydesc)
     * [Reading the output file](#readoutput)
 * [Processing Steps](#processing)
@@ -185,9 +185,9 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
     </tr>
 </table>
 
-<h2 id="namingvariables">Variable Names: Content versus Ease of Use in Coding</h2>
+<h2 id="namingvariables">Variable Names: content versus ease of use in coding</h2>
 
-In selecting our variable names, one must strike a balance between usability in coding and ease of understanding the meaning of a variable. Once a column name is more than 15 - 20 characters in length, it becomes unwieldy for use in a coding system where we expect to be able to read the code in 80 columns or less. Therefore, we chose to provide more detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts like magnitude as the Euclidean norm \(length of a vector from the origin of a multidimensional coordinate system\), which is not appropriate to express in a variable name, but makes it much easier to understand the meaning of the magnitude variables.  
+In selecting our variable names, one must strike a balance between usability in coding and ease of understanding the meaning of a variable. Once a column name is more than 15 - 20 characters in length, it becomes unwieldy for use in a coding system where we expect to be able to read the code in lines of 80 columns or less. Therefore, we chose to provide more detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts like magnitude as the Euclidean norm \(length of a vector from the origin of a multidimensional coordinate system\), which is not appropriate to express in a variable name, but makes it much easier to understand the meaning of the magnitude variables.  
 
 <h2 id="tidydesc">Output File: why is it tidy?</h2>
 
