@@ -122,33 +122,35 @@ The key challenge to using the data set  provided by the *Technical Research Cen
     </tr>
     <tr>
         <td valign=top>subject_test.txt</td>
-        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_test.txt file.  </td>
+        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement X_test.txt file.  </td>
     </tr>
     <tr>
-        <td valign=top>x_test.txt</td>
-        <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
+        <td valign=top>X_test.txt</td>
+        <td> File containing 561 measurements for each observed experiment on one of the six activities for a specific person.</td>
     </tr>
     <tr>
         <td valign=top>y_test.txt</td>
-        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_test.txt file.</td>
+        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement X_test.txt file.</td>
     </tr>
     <tr>
         <td valign=top>subject_train.txt</td>
-        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement x_train.txt file.  </td>
+        <td>File containing one column of data that identifies the subject (i.e. person) corresponding to each row of data in the test measurement X_train.txt file.  </td>
     </tr>
     <tr>
-        <td valign=top>x_train.txt</td>
-        <td> File containing 561 measurements for each observed experiment on one of the six activities.</td>
+        <td valign=top>X_train.txt</td>
+        <td> File containing 561 measurements for each observed experiment on one of the six activities for a specific person.</td>
     </tr>
     <tr>
         <td valign=top>y_train.txt</td>
-        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement x_train.txt file.</td>
+        <td>File containing one column of data that identifies the activity corresponding to each row of data in the test measurement X_train.txt file.</td>
     </tr>
 </table>
 
-Ultimately, to use the test data one must combine three files: x_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the x_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data. Also, the labels provided in features.txt are not completely accurate, as the bandsEnergy() variable labels are missing X, Y, and Z dimensions for 126 of the 561 variables, and features.txt also contains "bodyBody" variable names that are obvious typographical errors.
+Ultimately, to use the test data one must combine three files: X_test, y_test, and subject_test by adding y_test and subject_test as additional columns to the X_test data in order to have a complete observation -- one row of data per person / activity / experiment run. The same set of operations is required for the training data. The fact that a single observational unit \(person / activity / experiment\) is split over three separate files \(or tables\) demonstrates that this data qualifies as "messy" according to Hadley Wickham's definition of messy data.
 
-Once these data are combined, then the content from the features.txt file must be used to create variable labels for the test and training data.
+Furthermore, the labels provided in features.txt are not completely accurate, as the bandsEnergy() variable names are missing X, Y, and Z dimensions for 126 of the 561 variables, and features.txt also contains "bodyBody" variable names that are obvious typographical errors.
+
+Once these data are combined, then the content from the features.txt file must be used to create variable names for the test and training data to replace the V1 - V561 variable names that are automatically assigned on reading the X_test and X_train files into R.
 
 <h2 id="contents">Repository Contents</h2>
 
