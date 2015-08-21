@@ -90,6 +90,8 @@ fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signa
 >These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
+<b>Reference:</b> features_info.txt file from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
 # Variables in the Course Project Tidy Data Set #
 The following table describes all of the columns in the [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt) file that was created to fulfill the requirements for the *Getting and Cleaning Data* course on Coursera offered during August 2015.
 <table>
