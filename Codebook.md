@@ -6,7 +6,22 @@ This codebook accompanies the data file [tidydata.txt](https://github.com/lgresk
 
 One of the requirements for the course was to create a tidy data file \(for additional background, review the [README.md](https://github.com/lgreski/cleaningdata/blob/master/README.md) file that is also posted in this GitHub repository.
 
-The tidy data file contains 180 observations, combinations of subjects and activities, where the measured data consists of the mean \(average\) across multiple repetitions of an experiment across six types of physical activities.  The codebook describes each variable in the tidy data file.
+The tidy data file contains 180 observations, combinations of 30 research subjects and 6 activities, where the measured data consists of the mean across multiple repetitions of an experiment within each category of physical activity.  An observation \(or row\) in the tidy data set is a unique combination of personId and activityName, plus the means for 66 variables representing each of the variables from the original *Human Activity Recognition* data set that were means or standard deviations of the 33 base variables analyzed by the HAR research team, per the following illustration.
+
+### Observations in Tidy Data Set ###
+<table>
+<tr>
+<th>personId</th><th>activityName</th><th>meanOfTimeBodyAccMeanX</th><th>. . . </th><th> meanOfFreqBodyGyroJerkMagStdev</th>
+</tr>
+    <tr>
+    <td align=center>7</td><td align=center>walking</td><td align=right> 0.275592961754386</td><td>. . . </td><td align=right> -0.0841663774087719</td>
+    </tr>
+    <tr> <td align=center>.<br> .<br> .</td><td align=center>.<br> .<br> .</td><td align=center>.<br> .<br> .</td><td>.<br> .<br> . </td><td align=center>.<br> .<br> .</td>
+    </tr>
+</table>
+
+Although statisticians could assert that it would be more appropriate to summarize the standard deviations into standard errors \(see https://class.coursera.org/getdata-031/forum/thread?thread_id=28#post-1251 \[and following\] for details\), for the purposes of the data cleaning activity, the standard deviations have been summarized with the mean\(\) function.
+This codebook describes each variable \(column\) in the tidy data file.
 
 In all of the measurement variables, the text tokens have the following meanings.
 <table>
@@ -69,6 +84,8 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
 </table>
 
+<b>Reference:</b> features_info.txt and features.txt files from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
 Per the *Human Activity Recognition* research team, the original data was organized according to the following process.
 > The features selected for this database come from the accelerometer and gyroscope
 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't'
@@ -93,7 +110,7 @@ fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signa
 <b>Reference:</b> features_info.txt file from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
 # Variables in the Course Project Tidy Data Set #
-The following table describes all of the columns in the [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt) file that was created to fulfill the requirements for the *Getting and Cleaning Data* course on Coursera offered during August 2015.
+The following table describes all of the columns in the [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt) file that was created to fulfill the requirements for the *Getting and Cleaning Data* course on Coursera offered during August 2015. Variable names in the data set are written using [camelCase notation](https://en.wikipedia.org/wiki/CamelCase) to facilitate ease of reading within R code.
 <table>
     <tr>
         <th>Position</th>
@@ -103,7 +120,7 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr>
         <td align=right valign=top>1</td>
         <td valign=top>personId</td>
-        <td>Numeric identifier that indicates the participant or subject of the experiment. The original research study included 30 participants, so this variable has a range of numeric values  from 1 - 30. No further information beyond an id number was provided by the original research team.</td>
+        <td>Numeric identifier (a unique sequential number) that indicates the participant or subject of the experiment. The original research study included 30 participants, so this variable has a range of numeric values  from 1 - 30. No further information beyond an id number was provided by the original research team.</td>
     </tr>
     <tr>
         <td align=right valign=top>2</td>
@@ -116,7 +133,8 @@ The following table describes all of the columns in the [tidydata.txt](https://g
         <li>Walking</li>
         <li>Walking downstairs</li>
         <li>Walking upstairs</li>
-        </ul> </td>
+        </ul>
+        </td>
     </tr>
     <tr> <td valign=top align=right> 3 </td> <td valign=top> meanOfTimeBodyAccMeanX </td>  
     <td> Numeric variable measuring the mean of time domain body acceleration means in X dimension </td> </tr>
