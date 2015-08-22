@@ -13,11 +13,17 @@
 ## 5. From the data set in step 4, creates a second, independent tidy data set 
 ##    with the average of each variable for each activity and each subject.
 
-## set up directories to R working directory, as per instructions 
-## script expects all data files to be in R working directory
-theTrainDirectory <- paste(getwd(),"/",sep="")
-theTestDirectory <- paste(getwd(),"/",sep="")
-theDataDirectory <- paste(getwd(),"/",sep="")
+## download UCI HAR dataset zip file from Coursera website and unzip to working directory
+## note: since zip file includes its own subdirectory structure, use it directly instead of 
+##       trying to manipulate it 
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url,destfile='HAR.zip',method="curl",mode="wb")
+unzip(zipfile = "HAR.zip")
+
+## set up directories to R working directory and unzipped HAR subdirectories, as per instructions 
+theTrainDirectory <- paste(getwd(),"/UCI HAR Dataset/train/",sep="")
+theTestDirectory <- paste(getwd(),"/UCI HAR Dataset/test/",sep="")
+theDataDirectory <- paste(getwd(),"/UCI HAR Dataset/",sep="")
 
 ## check to see whether required packages are installed, and install if needed
 if (!"dplyr" %in% installed.packages()) {
@@ -31,17 +37,6 @@ if (!"data.table" %in% installed.packages()) {
 library(dplyr)
 library(data.table)
 
-## check if data files are in current working directory
-theFileList = c("activity_labels.txt","features.txt",
-                "X_train.txt","y_train.txt","subject_train.txt",
-                "X_test.txt","y_test.txt","subject_test.txt")
-warning(paste("The current working directory is:",getwd()))
-for (i in 1:length(theFileList)) {
-     if (!file.exists(theFileList[i])) stop(paste("File",theFileList[i],"is not in the working directory. Please add this file to the working directory and rerun the script."))
-}
-## if we get this far, all files exist, so send a message to console 
-warning(paste("All required files confirmed as existing in",getwd()))
-
 ## read activity file
 activityData <- read.table(paste(theDataDirectory,"activity_labels.txt",sep=''),
                            col.names=c("activityId","activityName"),stringsAsFactors=FALSE)
@@ -52,22 +47,6 @@ activityData[,2] <- sub("_"," ",activityData[,2])
 
 ## read features file
 featureData <- read.table(paste(theDataDirectory,"features.txt",sep=''),stringsAsFactors=FALSE)
-
-## correct bandsEnergy() FFT fields that are missing X, Y, and Z dimensions
-testResult <- lapply(featureData[,1:2],function(x) {
-     ## use conditional logic to process
-     if (between(x[1],1,381) | between(x[1],424,561)) {
-          ## do nothing
-          }
-          else if(between(x[1],382,395)) {
-               x[2] <- paste(x[2],".X",sep="")
-          } else if(between(x[1],396,407)) {
-               x[2] <- paste(x[2],".Y",sep="")
-          } else {
-               x[2] <- paste(x[2],".Z",sep="")
-          }
-     x
-})
 
 ## identify the columns that measure means from the feature data as vector of row indexes
 theMeanIndexes <- featureData[grepl("mean()",featureData$V2) & !grepl("meanFreq()",featureData$V2),1]
@@ -155,8 +134,7 @@ myTidyData <- read.table("tidydata.txt",header=TRUE,stringsAsFactors = FALSE)
 ## by comparing first numeric and last numeric column - difference of sums should
 ## be zero 
 myComp <- sum(aResult$MeanOfTimeBodyAccMeanX) - sum(myTidyData$MeanOfTimeBodyAccMeanX)
-message("Comparing first numeric variable MeanOftBodyAccMeanX - output file vs. input")
-round(sum(myComp),digits = 6)
+paste("Difference of first numeric variable MeanOftBodyAccMeanX - output file vs. input: ",myComp)
 myComp <- sum(aResult$MeanOfFreqBodyGyroJerkMagStdev) - sum(myTidyData$MeanOfFreqBodyGyroJerkMagStdev)
-message("Comparing last numeric variable MeanOfFreqBodyGyroJerkMagStdev - output file vs. input")
-round(sum(myComp),digits = 6)
+paste("Difference of last numeric variable MeanOfFreqBodyGyroJerkMagStdev - output file vs. input: ",myComp)
+
