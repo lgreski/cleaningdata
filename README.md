@@ -43,7 +43,7 @@ The research team also explained how the data from the inertial sensors were pro
 
 Reference: HAR@SMARTLAB website, retrieved from https://sites.google.com/site/harsmartlab/ on August 12, 2015.
 
-All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities. There was considerable variability in the number of times each person participated experiments for the various categories of experiments, as illustrated by the following table of minimum / maximum observations per person across each of the activities.
+All thirty participants were tracked on three static postures and three dynamic activities. Each person was recorded multiple different times for each of the six activities. There was considerable variability in the number of times each person participated experiments for the various categories of experiments, as illustrated by the following table of minimum / maximum observations per person across experiments for each of the activities.
 <table>
     <tr>
         <th valign="bottom">Activity</th>
@@ -208,7 +208,7 @@ The output file submitted for review qualifies as a tidy data set because it mat
 
 In support of requirement 1 for tidy data, each column contains one and only one variable: an average of one of 66 means and standard deviations measured among the 561 measurements derived from data collected from the smartphone.
 
-In support of tidy data requirement 2, the output file tidydata.txt, contains 180 rows, one for each combination of person and activity. An "observation" in this file is a person / activity combination. Thirty research participants with averages across six activities results in a 180 row file.
+In support of tidy data requirement 2, the output file tidydata.txt, contains 180 rows, one for each combination of person and activity. An "observation" in this file is a person / activity combination. Thirty research participants with averages across experiments within each of six activities results in a 180 row file.
 
 Finally, in support of tidy data requirement 3, there is one table output, and the observational unit: person / activity combinations, requires one and only one table.
 
@@ -272,7 +272,7 @@ Complicating matters is the fact that one must process the files in a specific s
 5. Remove all columns other than standard deviations and means from the measurement data set
 6. Column bind the personId and activityId columns onto the measurement data set. This step must occur last in the sequence to maintain the correspondence between measurement data set column number and feature name
 
-Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame. 
+Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame.
 
 Finally, we must merge the activity names into the combined test and training data in fulfillment of requirement \#3.
 
@@ -297,12 +297,13 @@ Another benefit of the wide tidy data format is that it is easier to use by peop
 
 The *run_analysis.R* script has been tested on three computers, each with a different operating system. Since some students in the August 2015 Getting and Cleaning Data course reported that their machines ran out of memory when running their version(s) of *run_analysis.R*, at least one set of tests was conducted on a 2009 era laptop, the Sony Vaio VGN-NW240F. The *run_analysis.R* script was tested with a variety of positive and negative test cases against the following acceptance critieria.
 
-* Presence of required data files, and error handling when required data files were not present
+* Correct download and unzipping of required data from Coursera cloud servers
 * Presence of required R packages, and automatic loading of required packages that were not already present
 * Ability to combine the test data with the training data without causing an out of memory error on the computer
 * Verification that the output tidy data file contained the expected number of rows and columns
 * Verification that the output tidy data file could be read back into R, comparing a subset of columns to ensure the differences were zero
-* Verification that the output files generated on OS X, Windows 7, and Windows 10 all produced exactly the same tidydata.txt file, via the UltraCompare utility.
+* Verification / spot checking that individual means by person / activity matched output produced by other students
+* Verification that the output files generated on OS X, Windows 7, and Windows 10 all produced exactly the same tidydata.txt file, via the UltraCompare utility
 
 The computers and their configurations are described in the following table.
 
