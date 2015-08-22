@@ -19,7 +19,7 @@ In all of the measurement variables, the text tokens have the following meanings
         <td>Signal based on the body of an experiment participant</td>
     </tr>
     <tr>
-        <td>f</td>
+        <td>Freq</td>
         <td>Measurement based on the "frequency" domain, taken as a Fast Fourier Transform of the time-based signals </td>
     </tr>
     <tr>
@@ -36,7 +36,7 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Mag</td>
-        <td>Measurement of the maginitude of the Euclidean norm (i.e. distance from the origin) of a three-dimensional signal</td>
+        <td>Measurement of the magnitude of the Euclidean norm (i.e. length of a vector from the origin) of a three-dimensional signal</td>
     </tr>
     <tr>
         <td>Mean</td>
@@ -44,7 +44,7 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
 
     <tr>
-        <td>MeanOf</td>
+        <td>meanOf</td>
         <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for each person of a given variable from the original <i>Human Activity Recognition</i> data set</td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@ In all of the measurement variables, the text tokens have the following meanings
         <td>Indicates that the measurement is a standard deviation within the original <i>Human Activity Recognition</i> data set</td>
     </tr>
     <tr>
-        <td>t</td>
+        <td>Time</td>
         <td>Measurement based on the "time" domain</td>
     </tr>
     <tr>
@@ -118,135 +118,135 @@ The following table describes all of the columns in the [tidydata.txt](https://g
         <li>Walking upstairs</li>
         </ul> </td>
     </tr>
-    <tr> <td valign=top align=right> 3 </td> <td valign=top> MeanOftBodyAccMeanX </td>  
+    <tr> <td valign=top align=right> 3 </td> <td valign=top> meanOfTimeBodyAccMeanX </td>  
     <td> Numeric variable measuring the mean of time domain body acceleration means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 4 </td> <td valign=top> MeanOftBodyAccMeanY </td>
+    <tr> <td valign=top align=right> 4 </td> <td valign=top> meanOfTimeBodyAccMeanY </td>
     <td> Numeric variable measuring the mean of time domain body acceleration means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 5 </td> <td valign=top> MeanOftBodyAccMeanZ </td> <td> Numeric variable measuring the mean of time dimension body acceleration means in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 6 </td> <td valign=top> MeanOftGravityAccMeanX </td>
+    <tr> <td valign=top align=right> 5 </td> <td valign=top> meanOfTimeBodyAccMeanZ </td> <td> Numeric variable measuring the mean of time dimension body acceleration means in Z dimension </td> </tr>
+    <tr> <td valign=top align=right> 6 </td> <td valign=top> meanOfTimeGravityAccMeanX </td>
     <td> Numeric variable measuring the mean of time doman gravity acceleration means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 7 </td> <td valign=top> MeanOftGravityAccMeanY </td>
+    <tr> <td valign=top align=right> 7 </td> <td valign=top> meanOfTimeGravityAccMeanY </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 8 </td> <td valign=top> MeanOftGravityAccMeanZ </td>
+    <tr> <td valign=top align=right> 8 </td> <td valign=top> meanOfTimeGravityAccMeanZ </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 9 </td> <td valign=top> MeanOftBodyAccJerkMeanX </td>
+    <tr> <td valign=top align=right> 9 </td> <td valign=top> meanOfTimeBodyAccJerkMeanX </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk means in X dimension  </td> </tr>
-    <tr> <td valign=top align=right> 10 </td> <td valign=top> MeanOftBodyAccJerkMeanY </td>
+    <tr> <td valign=top align=right> 10 </td> <td valign=top> meanOfTimeBodyAccJerkMeanY </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 11 </td> <td valign=top> MeanOftBodyAccJerkMeanZ </td>
+    <tr> <td valign=top align=right> 11 </td> <td valign=top> meanOfTimeBodyAccJerkMeanZ </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 12 </td> <td valign=top> MeanOftBodyGyroMeanX </td>
+    <tr> <td valign=top align=right> 12 </td> <td valign=top> meanOfTimeBodyGyroMeanX </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 13 </td> <td valign=top> MeanOftBodyGyroMeanY </td>
+    <tr> <td valign=top align=right> 13 </td> <td valign=top> meanOfTimeBodyGyroMeanY </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope means in Y dimension  </td> </tr>
-    <tr> <td valign=top align=right> 14 </td> <td valign=top> MeanOftBodyGyroMeanZ </td>
+    <tr> <td valign=top align=right> 14 </td> <td valign=top> meanOfTimeBodyGyroMeanZ </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope means in Z dimension  </td> </tr>
-    <tr> <td valign=top align=right> 15 </td> <td valign=top> MeanOftBodyGyroJerkMeanX </td>
+    <tr> <td valign=top align=right> 15 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanX </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 16 </td> <td valign=top> MeanOftBodyGyroJerkMeanY </td>
+    <tr> <td valign=top align=right> 16 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanY </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 17 </td> <td valign=top> MeanOftBodyGyroJerkMeanZ </td>
+    <tr> <td valign=top align=right> 17 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanZ </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 18 </td> <td valign=top> MeanOftBodyAccMagMean </td>
+    <tr> <td valign=top align=right> 18 </td> <td valign=top> meanOfTimeBodyAccMagMean </td>
     <td> Numeric variable measuring the mean of time domain body acceleration magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 19 </td> <td valign=top> MeanOftGravityAccMagMean </td>
+    <tr> <td valign=top align=right> 19 </td> <td valign=top> meanOfTimeGravityAccMagMean </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 20 </td> <td valign=top> MeanOftBodyAccJerkMagMean </td>
+    <tr> <td valign=top align=right> 20 </td> <td valign=top> meanOfTimeBodyAccJerkMagMean </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 21 </td> <td valign=top> MeanOftBodyGyroMagMean </td>
+    <tr> <td valign=top align=right> 21 </td> <td valign=top> meanOfTimeBodyGyroMagMean </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 22 </td> <td valign=top> MeanOftBodyGyroJerkMagMean </td>
+    <tr> <td valign=top align=right> 22 </td> <td valign=top> meanOfTimeBodyGyroJerkMagMean </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 23 </td> <td valign=top> MeanOffBodyAccMeanX </td>
+    <tr> <td valign=top align=right> 23 </td> <td valign=top> meanOfFreqBodyAccMeanX </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 24 </td> <td valign=top> MeanOffBodyAccMeanY </td>
+    <tr> <td valign=top align=right> 24 </td> <td valign=top> meanOfFreqBodyAccMeanY </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration means in Y dimension  </td> </tr>
-    <tr> <td valign=top align=right> 25 </td> <td valign=top> MeanOffBodyAccMeanZ </td>
+    <tr> <td valign=top align=right> 25 </td> <td valign=top> meanOfFreqBodyAccMeanZ </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration means in Z dimension  </td> </tr>
-    <tr> <td valign=top align=right> 26 </td> <td valign=top> MeanOffBodyAccJerkMeanX </td>
+    <tr> <td valign=top align=right> 26 </td> <td valign=top> meanOfFreqBodyAccJerkMeanX </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 27 </td> <td valign=top> MeanOffBodyAccJerkMeanY </td>
+    <tr> <td valign=top align=right> 27 </td> <td valign=top> meanOfFreqBodyAccJerkMeanY </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Y dimension  </td> </tr>
-    <tr> <td valign=top align=right> 28 </td> <td valign=top> MeanOffBodyAccJerkMeanZ </td>
+    <tr> <td valign=top align=right> 28 </td> <td valign=top> meanOfFreqBodyAccJerkMeanZ </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Z dimension  </td> </tr>
-    <tr> <td valign=top align=right> 29 </td> <td valign=top> MeanOffBodyGyroMeanX </td>
+    <tr> <td valign=top align=right> 29 </td> <td valign=top> meanOfFreqBodyGyroMeanX </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope means in X dimension  </td> </tr>
-    <tr> <td valign=top align=right> 30 </td> <td valign=top> MeanOffBodyGyroMeanY </td>
+    <tr> <td valign=top align=right> 30 </td> <td valign=top> meanOfFreqBodyGyroMeanY </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 31 </td> <td valign=top> MeanOffBodyGyroMeanZ </td>
+    <tr> <td valign=top align=right> 31 </td> <td valign=top> meanOfFreqBodyGyroMeanZ </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 32 </td> <td valign=top> MeanOffBodyAccMagMean </td>
+    <tr> <td valign=top align=right> 32 </td> <td valign=top> meanOfFreqBodyAccMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 33 </td> <td valign=top> MeanOffBodyAccJerkMagMean </td>
+    <tr> <td valign=top align=right> 33 </td> <td valign=top> meanOfFreqBodyAccJerkMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 34 </td> <td valign=top> MeanOffBodyGyroMagMean </td>
+    <tr> <td valign=top align=right> 34 </td> <td valign=top> meanOfFreqBodyGyroMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 35 </td> <td valign=top> MeanOffBodyGyroJerkMagMean </td>
+    <tr> <td valign=top align=right> 35 </td> <td valign=top> meanOfFreqBodyGyroJerkMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope jerk magnitude means </td> </tr>
-    <tr> <td valign=top align=right> 36 </td> <td valign=top> MeanOftBodyAccStdevX </td>
+    <tr> <td valign=top align=right> 36 </td> <td valign=top> meanOfTimeBodyAccStdevX </td>
     <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 37 </td> <td valign=top> MeanOftBodyAccStdevY </td>
+    <tr> <td valign=top align=right> 37 </td> <td valign=top> meanOfTimeBodyAccStdevY </td>
     <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 38 </td> <td valign=top> MeanOftBodyAccStdevZ </td>
+    <tr> <td valign=top align=right> 38 </td> <td valign=top> meanOfTimeBodyAccStdevZ </td>
     <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 39 </td> <td valign=top> MeanOftGravityAccStdevX </td>
+    <tr> <td valign=top align=right> 39 </td> <td valign=top> meanOfTimeGravityAccStdevX </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 40 </td> <td valign=top> MeanOftGravityAccStdevY </td>
+    <tr> <td valign=top align=right> 40 </td> <td valign=top> meanOfTimeGravityAccStdevY </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 41 </td> <td valign=top> MeanOftGravityAccStdevZ </td>
+    <tr> <td valign=top align=right> 41 </td> <td valign=top> meanOfTimeGravityAccStdevZ </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 42 </td> <td valign=top> MeanOftBodyAccJerkStdevX </td>
+    <tr> <td valign=top align=right> 42 </td> <td valign=top> meanOfTimeBodyAccJerkStdevX </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in X dimension</td> </tr>
-    <tr> <td valign=top align=right> 43 </td> <td valign=top> MeanOftBodyAccJerkStdevY </td>
+    <tr> <td valign=top align=right> 43 </td> <td valign=top> meanOfTimeBodyAccJerkStdevY </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 44 </td> <td valign=top> MeanOftBodyAccJerkStdevZ </td>
+    <tr> <td valign=top align=right> 44 </td> <td valign=top> meanOfTimeBodyAccJerkStdevZ </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 45 </td> <td valign=top> MeanOftBodyGyroStdevX </td>
+    <tr> <td valign=top align=right> 45 </td> <td valign=top> meanOfTimeBodyGyroStdevX </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 46 </td> <td valign=top> MeanOftBodyGyroStdevY </td>
+    <tr> <td valign=top align=right> 46 </td> <td valign=top> meanOfTimeBodyGyroStdevY </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 47 </td> <td valign=top> MeanOftBodyGyroStdevZ </td>
+    <tr> <td valign=top align=right> 47 </td> <td valign=top> meanOfTimeBodyGyroStdevZ </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 48 </td> <td valign=top> MeanOftBodyGyroJerkStdevX </td>
+    <tr> <td valign=top align=right> 48 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevX </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 49 </td> <td valign=top> MeanOftBodyGyroJerkStdevY </td>
+    <tr> <td valign=top align=right> 49 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevY </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 50 </td> <td valign=top> MeanOftBodyGyroJerkStdevZ </td>
+    <tr> <td valign=top align=right> 50 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevZ </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 51 </td> <td valign=top> MeanOftBodyAccMagStdev </td>
+    <tr> <td valign=top align=right> 51 </td> <td valign=top> meanOfTimeBodyAccMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body acceleration magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 52 </td> <td valign=top> MeanOftGravityAccMagStdev </td>
+    <tr> <td valign=top align=right> 52 </td> <td valign=top> meanOfTimeGravityAccMagStdev </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration magnitude standard deviation </td> </tr>
-    <tr> <td valign=top align=right> 53 </td> <td valign=top> MeanOftBodyAccJerkMagStdev </td>
+    <tr> <td valign=top align=right> 53 </td> <td valign=top> meanOfTimeBodyAccJerkMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body acceleration jerk magnitude standard deviation </td> </tr>
-    <tr> <td valign=top align=right> 54 </td> <td valign=top> MeanOftBodyGyroMagStdev </td>
+    <tr> <td valign=top align=right> 54 </td> <td valign=top> meanOfTimeBodyGyroMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 55 </td> <td valign=top> MeanOftBodyGyroJerkMagStdev </td>
+    <tr> <td valign=top align=right> 55 </td> <td valign=top> meanOfTimeBodyGyroJerkMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 56 </td> <td valign=top> MeanOffBodyAccStdevX </td>
+    <tr> <td valign=top align=right> 56 </td> <td valign=top> meanOfFreqBodyAccStdevX </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 57 </td> <td valign=top> MeanOffBodyAccStdevY </td>
+    <tr> <td valign=top align=right> 57 </td> <td valign=top> meanOfFreqBodyAccStdevY </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 58 </td> <td valign=top> MeanOffBodyAccStdevZ </td>
+    <tr> <td valign=top align=right> 58 </td> <td valign=top> meanOfFreqBodyAccStdevZ </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 59 </td> <td valign=top> MeanOffBodyAccJerkStdevX </td>
+    <tr> <td valign=top align=right> 59 </td> <td valign=top> meanOfFreqBodyAccJerkStdevX </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 60 </td> <td valign=top> MeanOffBodyAccJerkStdevY </td>
+    <tr> <td valign=top align=right> 60 </td> <td valign=top> meanOfFreqBodyAccJerkStdevY </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 61 </td> <td valign=top> MeanOffBodyAccJerkStdevZ </td>
+    <tr> <td valign=top align=right> 61 </td> <td valign=top> meanOfFreqBodyAccJerkStdevZ </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 62 </td> <td valign=top> MeanOffBodyGyroStdevX </td>
+    <tr> <td valign=top align=right> 62 </td> <td valign=top> meanOfFreqBodyGyroStdevX </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in X dimension </td> </tr>
-    <tr> <td valign=top align=right> 63 </td> <td valign=top> MeanOffBodyGyroStdevY </td>
+    <tr> <td valign=top align=right> 63 </td> <td valign=top> meanOfFreqBodyGyroStdevY </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 64 </td> <td valign=top> MeanOffBodyGyroStdevZ </td>
+    <tr> <td valign=top align=right> 64 </td> <td valign=top> meanOfFreqBodyGyroStdevZ </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Z dimension </td> </tr>
-    <tr> <td valign=top align=right> 65 </td> <td valign=top> MeanOffBodyAccMagStdev </td>
+    <tr> <td valign=top align=right> 65 </td> <td valign=top> meanOfFreqBodyAccMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 66 </td> <td valign=top> MeanOffBodyAccJerkMagStdev </td>
+    <tr> <td valign=top align=right> 66 </td> <td valign=top> meanOfFreqBodyAccJerkMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration jerk magnitude standard deviations </td> </tr>
-    <tr> <td valign=top align=right> 67 </td> <td valign=top> MeanOffBodyGyroMagStdev </td>
+    <tr> <td valign=top align=right> 67 </td> <td valign=top> meanOfFreqBodyGyroMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope magnitude standard deviations  </td> </tr>
-    <tr> <td valign=top align=right> 68 </td> <td valign=top> MeanOffBodyGyroJerkMagStdev </td>
+    <tr> <td valign=top align=right> 68 </td> <td valign=top> meanOfFreqBodyGyroJerkMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope jerk magnitude standard deviations  </td> </tr>
 </table>
