@@ -53,6 +53,22 @@ activityData[,2] <- sub("_"," ",activityData[,2])
 ## read features file
 featureData <- read.table(paste(theDataDirectory,"features.txt",sep=''),stringsAsFactors=FALSE)
 
+## correct bandsEnergy() FFT fields that are missing X, Y, and Z dimensions
+testResult <- lapply(featureData[,1:2],function(x) {
+     ## use conditional logic to process
+     if (between(x[1],1,381) | between(x[1],424,561)) {
+          ## do nothing
+          }
+          else if(between(x[1],382,395)) {
+               x[2] <- paste(x[2],".X",sep="")
+          } else if(between(x[1],396,407)) {
+               x[2] <- paste(x[2],".Y",sep="")
+          } else {
+               x[2] <- paste(x[2],".Z",sep="")
+          }
+     x
+})
+
 ## identify the columns that measure means from the feature data as vector of row indexes
 theMeanIndexes <- featureData[grepl("mean()",featureData$V2) & !grepl("meanFreq()",featureData$V2),1]
 
@@ -66,6 +82,15 @@ featureData[,2] <- sub("std","Stdev",featureData[,2])
 featureData[,2] <- sub("BodyBody","Body",featureData[,2])
 ## strip out () from featureData
 featureData[,2] <- sub("\\(\\)","",featureData[,2])
+## change t and f to Time and Freq
+featureData[,2] <- sapply(featureData[,2],function(x) {
+     if(substr(x,1,1)=="t") {
+          x <- paste("Time",substr(x,2,nchar(x)),sep="")
+     } else if(substr(x,1,1)=="f") {
+          x <- paste("Freq",substr(x,2,nchar(x)),sep="")
+     }
+     x
+})
 
 ## strip out dashes, and create vectors of means and standard deviations
 ## to subset the measurement data sets
@@ -116,7 +141,7 @@ aResult <- theDataTbl[,lapply(.SD,mean),by="personId,activityName",.SDcols=3:68]
 ## append "mean of" to front of variable names, using apply then clean up first two names
 ## and overwrite existing column names
 theColumns <- colnames(aResult)
-theColumns <- sapply(theColumns, function(x) {paste("MeanOf",x,sep="")})
+theColumns <- sapply(theColumns, function(x) {paste("meanOf",x,sep="")})
 setnames(aResult,1:length(theColumns),theColumns)
 setnames(aResult,1,"personId")
 setnames(aResult,2,"activityName")
@@ -127,11 +152,11 @@ write.table(aResult,file="tidydata.txt",row.names = FALSE)
 myTidyData <- read.table("tidydata.txt",header=TRUE,stringsAsFactors = FALSE)
 
 ## confirm that data we read back in matches data we wrote out
-## by comparing first numeric and last numeric column - differences should
-## sum to zero 
-myComp <- aResult$MeanOftBodyAccMeanX - myTidyData$MeanOftBodyAccMeanX
+## by comparing first numeric and last numeric column - difference of sums should
+## be zero 
+myComp <- sum(aResult$MeanOfTimeBodyAccMeanX) - sum(myTidyData$MeanOfTimeBodyAccMeanX)
 message("Comparing first numeric variable MeanOftBodyAccMeanX - output file vs. input")
 round(sum(myComp),digits = 6)
-myComp <- aResult$MeanOffBodyBodyGyroJerkMagStdev - myTidyData$MeanOffBodyBodyGyroJerkMagStdev
-message("Comparing last numeric variable MeanOffBodyBodyGyroJerkMagStdev - output file vs. input")
+myComp <- sum(aResult$MeanOfFreqBodyGyroJerkMagStdev) - sum(myTidyData$MeanOfFreqBodyGyroJerkMagStdev)
+message("Comparing last numeric variable MeanOfFreqBodyGyroJerkMagStdev - output file vs. input")
 round(sum(myComp),digits = 6)
