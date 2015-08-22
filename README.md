@@ -229,8 +229,8 @@ The following R code can be used to read the tidy data file once it has been cop
 
 <h2 id="stepsoutline">Summary of Processing Steps in run_analysis.R </h2>
 
-1. Verify whether required R packages beyond base are installed, and if not present, install them  
-2. Confirm all 8 required files are present in the R working directory
+1. Download required UCI HAR data zip file
+2. Unzip the file into working directory, creating /UCI HAR Dataset/ and additional subdirectories
 3. Read activity data and remove special characters from activity names
 4. Read the features file and do the following:
     * Clean the feature identifiers by removing special characters
@@ -355,15 +355,11 @@ Given our test results, a computer with at least 2Ghz of processing power, 4Gb o
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
 
 <h2> run_analysis.R Runbook </h2>
-A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or processes conducted by a system administrator or operator. For the purposes of working with *run_analysis.R*, the  following steps must be taken to run the script. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set, and therefore does not already have the required data files stored on the computer where *run_analysis.R* will be executed.
+A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or processes conducted by a system administrator or operator. For the purposes of working with *run_analysis.R*, the  following steps must be taken to run the script. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set, and therefore does not already have the required data files stored on the computer where *run_analysis.R* will be executed. Therefore, the script downloads the required zip file, and unzips it into the R working directory.
 
-1. Download the data as specified in the [Coursera Project Instructions Page](https://class.coursera.org/getdata-031/human_grading/view/courses/975115/assessments/3/submissions). The data set from the Coursera instructions is a copy of the [UCI HAR Data Set](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) that is stored on a server controlled by the course instructor.
-2. Unzip the file, which will create a directory /UCI HAR Dataset.
-3. From the UCI HAR Dataset directory, move activity_labels.txt and features.txt to the *R Working Directory*.
-4. From the /UCI HAR Dataset/test directory, move X_test.txt, y_test.txt, and subject_test.txt to the  *R Working Directory*.
-5. From the /UCI HAR Dataset/train directory, move X_train.txt, y_train.txt, and subject_train.txt to the  *R Working Directory*.
-6. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
-7. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
-8. \(Optional\) View the *tidydata.txt* file that is written to the *R Working Directory* with a text editor.
+
+1. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
+2. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
+3. \(Optional\) View the *tidydata.txt* file that is written to the *R Working Directory* with a text editor.
 
 Return to <a href="#top"> top of document</a>
