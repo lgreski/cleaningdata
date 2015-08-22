@@ -272,9 +272,7 @@ Complicating matters is the fact that one must process the files in a specific s
 5. Remove all columns other than standard deviations and means from the measurement data set
 6. Column bind the personId and activityId columns onto the measurement data set. This step must occur last in the sequence to maintain the correspondence between measurement data set column number and feature name
 
-Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame.
-
-Since some students reported problems with R running out of memory while processing the row bind between the test and training data, we eliminated all of the unwanted columns from the measurement data sets prior to executing the rbind\(\) function. Executing the processing steps in this order also improves the runtime speed of the script.  
+Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame. 
 
 Finally, we must merge the activity names into the combined test and training data in fulfillment of requirement \#3.
 
