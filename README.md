@@ -1,4 +1,4 @@
-<A name="top">Getting and Cleaning Data: README</a>
+Getting and Cleaning Data: README
 =================================
 * [Overview](#overview)
     * [Project Summary](#summary)
@@ -196,7 +196,7 @@ However, the abbreviations used in *features.txt* are not intuitive to most of t
 
 <h2 id="average">Average: using the mean as a measure of central tendency </h2>
 
-Requirement \#5 specifies that we calculate an average for each variable in the tidy data set, grouped by person and activity. On the Discussion Forum there was a significant debate over whether we should interpret this term, *average* as a mean, median, or mode. All three of these statistics are measures of central tendency, that is, they attempt to measure the center of a distribution of numbers. However, the statistic most commonly used for "average" is the mean, so we have calculated means for our tidy data set rather than medians or modes.
+Requirement \#5 specifies that we calculate an average for each variable in the tidy data set, grouped by person and activity. On the Discussion Forum there was a significant debate over whether we should interpret this term, *average,* as a mean, median, or mode. All three of these statistics are measures of central tendency, that is, they attempt to measure the center of a distribution of numbers. However, the statistic most commonly used for "average" is the mean, so we have calculated means for our tidy data set rather than medians or modes.
 
 <h2 id="tidydesc">Output File: why is it tidy?</h2>
 
@@ -259,7 +259,7 @@ The following R code can be used to read the tidy data file once it has been cop
 12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
 <h2 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h2>
-As stated earlier, it was difficult to asertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows \(2,947\) as do the training files \(7,352\). Then it becomes clear that these files should be combined to make a complete test or training data set.
+As stated earlier, it was difficult to ascertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows \(2,947\) as do the training files \(7,352\). Then it becomes clear that these files should be combined to make a complete test or training data set.
 
 The same challenge existed for naming the columns on the X_test.txt and X_train.txt data files. There are 561 rows in the features.txt file, one per column of data in the test and training measurements files. Since the features.txt file contains characters that are unsuitable for use as column names in an R data table, one must strip out these characters before using the feature data as a set of column names.
 
@@ -350,7 +350,7 @@ The computers and their configurations are described in the following table.
 
 <h2> Prerequisites </h2>
 
-Given our test results, a computer with at least 2Ghz of processing power, 4Gb of memory, and 10Gb of free disk space should be sufficient to process the script with R.
+The total amount of memory used by R after merging the test and training data was 102Mb, well within the limits of any of the machines on which we tested the *run_analysis.R* script. Given our test results, a computer with at least 2Ghz of processing power, 4Gb of memory, and 10Gb of free disk space should have more than sufficient capacity to process the script with R.
 
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
 
@@ -361,5 +361,3 @@ A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or 
 1. Download [*run_analysis.R*](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
 2. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
 3. \(Optional\) View the *tidydata.txt* file that is written to the *R Working Directory* with a text editor.
-
-Return to <a href="#top"> top of document</a>
