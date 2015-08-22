@@ -254,7 +254,7 @@ The following R code can be used to read the tidy data file once it has been cop
     * Each variable forms a column: means of the 66 variables that were means or standard deviations plus personId and activityName for a total of 68 columns,
     * One row per subject \(personId\) activity \(activityName\) combination, and
     * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
-10. Add "MeanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data originally provided by the *Human Activity Recognition* research team  
+10. Add "meanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data originally provided by the *Human Activity Recognition* research team  
 11. Write the output file
 12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
