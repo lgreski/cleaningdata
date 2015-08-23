@@ -20,7 +20,7 @@ The tidy data file contains 180 observations, combinations of 30 research subjec
     </tr>
 </table>
 
-Although statisticians could assert that it would be more appropriate to summarize the standard deviations into standard errors \(see https://class.coursera.org/getdata-031/forum/thread?thread_id=28#post-1251 \[and following\] for details\), for the purposes of the data cleaning activity, the standard deviations have been summarized with the mean\(\) function.
+Although statisticians could assert that it would be more appropriate to summarize the standard deviations into standard errors \(see https://class.coursera.org/getdata-031/forum/thread?thread_id=28#post-1251 \[and following\] for details\), for the purposes of the data cleaning activity, the standard deviations have been summarized with the mean\(\) function in R.
 This codebook describes each variable \(column\) in the tidy data file.
 
 In all of the measurement variables, the text tokens have the following meanings. We have consolidated the term definitions here to avoid repetition of the definitions in the table of variables.
@@ -68,7 +68,7 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Time</td>
-        <td>Measurement based on the "time" domain. Measurements taken from the phone were measured at a frequency of 50Hz, meaning 50 discrete measurements per second. </td>
+        <td>Measurement based on the "time" domain. Measurements taken from the phone were measured at a frequency of 50Hz, meaning 50 discrete measurements per second</td>
     </tr>
     <tr>
         <td>X</td>
