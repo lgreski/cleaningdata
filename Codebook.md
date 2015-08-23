@@ -142,7 +142,7 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <td> Numeric variable measuring the mean of time domain body acceleration means in Y dimension </td> </tr>
     <tr> <td valign=top align=right> 5 </td> <td valign=top> meanOfTimeBodyAccMeanZ </td> <td> Numeric variable measuring the mean of time dimension body acceleration means in Z dimension </td> </tr>
     <tr> <td valign=top align=right> 6 </td> <td valign=top> meanOfTimeGravityAccMeanX </td>
-    <td> Numeric variable measuring the mean of time doman gravity acceleration means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration means in X dimension </td> </tr>
     <tr> <td valign=top align=right> 7 </td> <td valign=top> meanOfTimeGravityAccMeanY </td>
     <td> Numeric variable measuring the mean of time domain gravity acceleration means in Y dimension </td> </tr>
     <tr> <td valign=top align=right> 8 </td> <td valign=top> meanOfTimeGravityAccMeanZ </td>
