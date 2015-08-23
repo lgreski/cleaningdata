@@ -23,7 +23,7 @@ The tidy data file contains 180 observations, combinations of 30 research subjec
 Although statisticians could assert that it would be more appropriate to summarize the standard deviations into standard errors \(see https://class.coursera.org/getdata-031/forum/thread?thread_id=28#post-1251 \[and following\] for details\), for the purposes of the data cleaning activity, the standard deviations have been summarized with the mean\(\) function.
 This codebook describes each variable \(column\) in the tidy data file.
 
-In all of the measurement variables, the text tokens have the following meanings.
+In all of the measurement variables, the text tokens have the following meanings. We have consolidated the term definitions here to avoid repetition of the definitions in the table of variables.
 <table>
     <tr>
         <th>Token</th>
@@ -31,7 +31,7 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Body</td>
-        <td>Signal based on the body of an experiment participant</td>
+        <td>Signal based on the body of an experiment participant, one of two components derived from the time based signals on the phone's accelerometer </td>
     </tr>
     <tr>
         <td>Freq</td>
@@ -39,11 +39,11 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Gravity</td>
-        <td>Signal based on gravity, the force that attracts a body towards the center of the earth</td>
+        <td>Signal based on gravity, the force that attracts a body towards the center of the earth. Gravity is the second of the two measurement components derived from the phone's accelerometer </td>
     </tr>
     <tr>
         <td>Gyro</td>
-        <td>Measurement taken from gyroscope</td>
+        <td>Measurement taken from the gyroscope on the phone</td>
     </tr>
     <tr>
         <td>Jerk </td>
@@ -60,7 +60,7 @@ In all of the measurement variables, the text tokens have the following meanings
 
     <tr>
         <td>meanOf</td>
-        <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for each person of a given variable from the original <i>Human Activity Recognition</i> data set</td>
+        <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for a person for a given feature (variable) from the original <i>Human Activity Recognition</i> data set</td>
     </tr>
     <tr>
         <td>Stdev</td>
@@ -68,19 +68,19 @@ In all of the measurement variables, the text tokens have the following meanings
     </tr>
     <tr>
         <td>Time</td>
-        <td>Measurement based on the "time" domain</td>
+        <td>Measurement based on the "time" domain. Measurements taken from the phone were measured at a frequency of 50Hz, meaning 50 discrete measurements per second. </td>
     </tr>
     <tr>
         <td>X</td>
-        <td>Measurement taken in "X" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+        <td>Measurement taken along the "X" dimension of the phone, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>Measurement taken in "Y" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+        <td>Measurement taken along the "Y" dimension of the phone, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
     </tr>
     <tr>
         <td>Z</td>
-        <td>Measurement taken in "Z" dimension, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
+        <td>Measurement taken along the "Z" dimension of the phone, as in a three-dimensional Cartesian coordinate system of X, Y and Z</td>
     </tr>
 </table>
 
@@ -137,34 +137,34 @@ The following table describes all of the columns in the [tidydata.txt](https://g
         </td>
     </tr>
     <tr> <td valign=top align=right> 3 </td> <td valign=top> meanOfTimeBodyAccMeanX </td>  
-    <td> Numeric variable measuring the mean of time domain body acceleration means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 4 </td> <td valign=top> meanOfTimeBodyAccMeanY </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration means in Y dimension </td> </tr>
-    <tr> <td valign=top align=right> 5 </td> <td valign=top> meanOfTimeBodyAccMeanZ </td> <td> Numeric variable measuring the mean of time dimension body acceleration means in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration means in Y dimension of the phone </td> </tr>
+    <tr> <td valign=top align=right> 5 </td> <td valign=top> meanOfTimeBodyAccMeanZ </td> <td> Numeric variable measuring the mean of time domain body acceleration means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 6 </td> <td valign=top> meanOfTimeGravityAccMeanX </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 7 </td> <td valign=top> meanOfTimeGravityAccMeanY </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration means in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 8 </td> <td valign=top> meanOfTimeGravityAccMeanZ </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 9 </td> <td valign=top> meanOfTimeBodyAccJerkMeanX </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in X dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 10 </td> <td valign=top> meanOfTimeBodyAccJerkMeanY </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 11 </td> <td valign=top> meanOfTimeBodyAccJerkMeanZ </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 12 </td> <td valign=top> meanOfTimeBodyGyroMeanX </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 13 </td> <td valign=top> meanOfTimeBodyGyroMeanY </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope means in Y dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 14 </td> <td valign=top> meanOfTimeBodyGyroMeanZ </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope means in Z dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 15 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanX </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 16 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanY </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 17 </td> <td valign=top> meanOfTimeBodyGyroJerkMeanZ </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 18 </td> <td valign=top> meanOfTimeBodyAccMagMean </td>
     <td> Numeric variable measuring the mean of time domain body acceleration magnitude means </td> </tr>
     <tr> <td valign=top align=right> 19 </td> <td valign=top> meanOfTimeGravityAccMagMean </td>
@@ -176,23 +176,23 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr> <td valign=top align=right> 22 </td> <td valign=top> meanOfTimeBodyGyroJerkMagMean </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk magnitude means </td> </tr>
     <tr> <td valign=top align=right> 23 </td> <td valign=top> meanOfFreqBodyAccMeanX </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 24 </td> <td valign=top> meanOfFreqBodyAccMeanY </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration means in Y dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 25 </td> <td valign=top> meanOfFreqBodyAccMeanZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration means in Z dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 26 </td> <td valign=top> meanOfFreqBodyAccJerkMeanX </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 27 </td> <td valign=top> meanOfFreqBodyAccJerkMeanY </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Y dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 28 </td> <td valign=top> meanOfFreqBodyAccJerkMeanZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Z dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 29 </td> <td valign=top> meanOfFreqBodyGyroMeanX </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in X dimension  </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 30 </td> <td valign=top> meanOfFreqBodyGyroMeanY </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 31 </td> <td valign=top> meanOfFreqBodyGyroMeanZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope means in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 32 </td> <td valign=top> meanOfFreqBodyAccMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude means </td> </tr>
     <tr> <td valign=top align=right> 33 </td> <td valign=top> meanOfFreqBodyAccJerkMagMean </td>
@@ -202,35 +202,35 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr> <td valign=top align=right> 35 </td> <td valign=top> meanOfFreqBodyGyroJerkMagMean </td>
     <td> Numeric variable measuring the mean of frequency domain body gyroscope jerk magnitude means </td> </tr>
     <tr> <td valign=top align=right> 36 </td> <td valign=top> meanOfTimeBodyAccStdevX </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 37 </td> <td valign=top> meanOfTimeBodyAccStdevY </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 38 </td> <td valign=top> meanOfTimeBodyAccStdevZ </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 39 </td> <td valign=top> meanOfTimeGravityAccStdevX </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 40 </td> <td valign=top> meanOfTimeGravityAccStdevY </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 41 </td> <td valign=top> meanOfTimeGravityAccStdevZ </td>
-    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain gravity acceleration standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 42 </td> <td valign=top> meanOfTimeBodyAccJerkStdevX </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in X dimension</td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 43 </td> <td valign=top> meanOfTimeBodyAccJerkStdevY </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 44 </td> <td valign=top> meanOfTimeBodyAccJerkStdevZ </td>
-    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body acceleration jerk standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 45 </td> <td valign=top> meanOfTimeBodyGyroStdevX </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 46 </td> <td valign=top> meanOfTimeBodyGyroStdevY </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 47 </td> <td valign=top> meanOfTimeBodyGyroStdevZ </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 48 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevX </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 49 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevY </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 50 </td> <td valign=top> meanOfTimeBodyGyroJerkStdevZ </td>
-    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of time domain body gyroscope jerk standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 51 </td> <td valign=top> meanOfTimeBodyAccMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body acceleration magnitude standard deviations </td> </tr>
     <tr> <td valign=top align=right> 52 </td> <td valign=top> meanOfTimeGravityAccMagStdev </td>
@@ -242,23 +242,23 @@ The following table describes all of the columns in the [tidydata.txt](https://g
     <tr> <td valign=top align=right> 55 </td> <td valign=top> meanOfTimeBodyGyroJerkMagStdev </td>
     <td> Numeric variable measuring the mean of time domain body gyroscope jerk magnitude standard deviations </td> </tr>
     <tr> <td valign=top align=right> 56 </td> <td valign=top> meanOfFreqBodyAccStdevX </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 57 </td> <td valign=top> meanOfFreqBodyAccStdevY </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 58 </td> <td valign=top> meanOfFreqBodyAccStdevZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 59 </td> <td valign=top> meanOfFreqBodyAccJerkStdevX </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 60 </td> <td valign=top> meanOfFreqBodyAccJerkStdevY </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 61 </td> <td valign=top> meanOfFreqBodyAccJerkStdevZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body acceleration jerk standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 62 </td> <td valign=top> meanOfFreqBodyGyroStdevX </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in X dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in X dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 63 </td> <td valign=top> meanOfFreqBodyGyroStdevY </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Y dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Y dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 64 </td> <td valign=top> meanOfFreqBodyGyroStdevZ </td>
-    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Z dimension </td> </tr>
+    <td> Numeric variable measuring the mean of frequency domain body gyroscope standard deviations in Z dimension of the phone </td> </tr>
     <tr> <td valign=top align=right> 65 </td> <td valign=top> meanOfFreqBodyAccMagStdev </td>
     <td> Numeric variable measuring the mean of frequency domain body acceleration magnitude standard deviations </td> </tr>
     <tr> <td valign=top align=right> 66 </td> <td valign=top> meanOfFreqBodyAccJerkMagStdev </td>
