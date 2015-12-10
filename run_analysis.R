@@ -15,7 +15,7 @@
 
 ## download UCI HAR dataset zip file from Coursera website and unzip to working directory
 ## note: since zip file includes its own subdirectory structure, use it directly instead of 
-##       trying to manipulate it 
+##       trying to manipulate it.  
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url,destfile='HAR.zip',method="curl",mode="wb")
 unzip(zipfile = "HAR.zip")
