@@ -116,7 +116,7 @@ The following table describes all of the columns in the [tidydata.txt](https://g
 <table>
     <tr>
         <th>Position</th>
-        <th>columns Name</th>
+        <th>Column Name</th>
         <th>Description</th>
     </tr>
     <tr>
