@@ -9,6 +9,7 @@ One of the requirements for the course was to create a tidy data file \(for addi
 The tidy data file contains 180 observations, combinations of 30 research subjects and 6 activities, where the measured data consists of the mean across multiple repetitions of an experiment within each category of physical activity.  An observation \(or row\) in the tidy data set is a unique combination of personId and activityName, plus the means for 66 variables representing each of the variables from the original *Human Activity Recognition* data set that were means or standard deviations of the 33 base variables analyzed by the HAR research team, per the following illustration.
 
 ### Observations in Tidy Data Set ###
+
 <table>
 <tr>
 <th>personId</th><th>activityName</th><th>meanOfTimeBodyAccMeanX</th><th>. . . </th><th> meanOfFreqBodyGyroJerkMagStdev</th>
@@ -113,6 +114,7 @@ Finally, in the original data, all features were normalized to a range from -1 t
 
 # Variables in the Course Project Tidy Data Set #
 The following table describes all of the columns in the [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt) file that was created to fulfill the requirements for the *Getting and Cleaning Data* course on Coursera offered during August 2015. Variable names in the data set are written using [camelCase notation](https://en.wikipedia.org/wiki/CamelCase) to facilitate ease of reading within R code.
+
 <table>
     <tr>
         <th>Position</th>
