@@ -25,6 +25,7 @@ Although statisticians could assert that it would be more appropriate to summari
 This codebook describes each variable \(column\) in the tidy data file.
 
 In all of the measurement variables, the text tokens have the following meanings. We have consolidated the term definitions here to avoid repetition of the definitions in the table of variables.
+
 <table>
     <tr>
         <th>Token</th>
@@ -110,7 +111,7 @@ fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signa
 
 <b>Reference:</b> features_info.txt file from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
-Finally, in the original data, all features were normalized to a range from -1 to 1, per the README.txt file from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). Therefore, each feature \(measurement\) varies from -1 to 1 across the 10,299 rows of the combined X_test.txt and X_train.txt files. 
+Finally, in the original data, all features were normalized to a range from -1 to 1, per the README.txt file from [A Public Domain Dataset for Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). Therefore, each feature \(measurement\) varies from -1 to 1 across the 10,299 rows of the combined X_test.txt and X_train.txt files.
 
 # Variables in the Course Project Tidy Data Set #
 The following table describes all of the columns in the [tidydata.txt](https://github.com/lgreski/cleaningdata/blob/master/tidydata.txt) file that was created to fulfill the requirements for the *Getting and Cleaning Data* course on Coursera offered during August 2015. Variable names in the data set are written using [camelCase notation](https://en.wikipedia.org/wiki/CamelCase) to facilitate ease of reading within R code.
