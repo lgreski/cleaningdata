@@ -59,7 +59,6 @@ In all of the measurement variables, the text tokens have the following meanings
         <td>Mean</td>
         <td>Indicates that the measurement is a mean within the original <i>Human Activity Recognition</i> data set</td>
     </tr>
-
     <tr>
         <td>meanOf</td>
         <td>Indicates that the measurement is a mean in the tidy dataset taken over all experiments for a particular activity for a person for a given feature (variable) from the original <i>Human Activity Recognition</i> data set</td>
