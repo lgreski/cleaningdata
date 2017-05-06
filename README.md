@@ -190,9 +190,9 @@ A fourth file, the output from step 5 listed in *The Data Cleaning Task* section
 
 <h2 id="namingvariables">Variable Names: content versus ease of use in coding</h2>
 
-In selecting variable names for the data set one must strike a balance between usability in coding and ease of understanding the meaning of a variable. Once a column name is more than 15 - 20 characters in length, it becomes unwieldy for use in a coding system where we expect to be able to read the code in lines of 80 columns or less. Relative to the V1 - V561 that are automatically assigned to the *X_test.txt* and *X_train.txt* files when loaded into R, the content from *features.txt* \(as we modified it\) provides a set of relatively descriptive variable names at a variable name length that is reasonable for command line programming.
+In selecting variable names for the data set one must strike a balance between usability in coding and ease of understanding the meaning of a variable. Once a column name is more than 15 - 20 characters in length, it becomes unwieldy for use in a coding system where we expect to be able to read the code in lines of 80 columns or less. Relative to the V1 - V561 that are automatically assigned to the *X_test.txt* and *X_train.txt* files when loaded into R, the content from *features.txt* (as we modified it) provides a set of relatively descriptive variable names at a variable name length that is reasonable for command line programming.
 
-However, the abbreviations used in *features.txt* are not intuitive to most of the participants in the *Getting and Cleaning Data* course, as evidenced by the large volume of questions on the Discussion Forum about what the variables mean. Therefore, we chose to provide detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts such as *Mag* being the  magnitude as the Euclidean norm \(length of a vector from the origin of a multidimensional coordinate system\) in the variable description in the Codebook, rather than trying to communicate this in a variable name.
+However, the abbreviations used in *features.txt* are not intuitive to most of the participants in the *Getting and Cleaning Data* course, as evidenced by the large volume of questions on the Discussion Forum about what the variables mean. Therefore, we chose to provide detailed textual descriptions for each variable in the [Codebook.md](https://github.com/lgreski/cleaningdata/blob/master/Codebook.md) file, rather than simply expanding the variable names to include full words (e.g. Acceleration vs. Acc, Gyroscope vs. Gyro, etc.). This choice allows us to explain concepts such as *Mag* being the  magnitude as the Euclidean norm (length of a vector from the origin of a multidimensional coordinate system) in the variable description in the Codebook, rather than trying to communicate this in a variable name.
 
 <h2 id="average">Average: using the mean as a measure of central tendency </h2>
 
@@ -236,43 +236,43 @@ The following R code can be used to read the tidy data file once it has been cop
     * Clean the feature identifiers by removing special characters
     * Identify features that are means or standard deviations
     * Correct the typographical error on variables named 'BodyBody', because there is no other reference to any variables containing "BodyBody"
-5. Read the test files \(X_test.txt, y_test.txt, and subject_test.txt\) and do the following:
+5. Read the test files (X_test.txt, y_test.txt, and subject_test.txt) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data set, using the previously cleaned feature names, fulfilling requirements \#3 and \#4
     * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-6. Read the training files \(X_train.txt, y_train.txt, and subject_test.txt\) and do the following:
+6. Read the training files (X_train.txt, y_train.txt, and subject_test.txt) and do the following:
     * Add column name, personId, to subject data set
     * Add column name, activityId, to activity data set
     * Assign column names to the measurement data  set, using the previously cleaned feature names, fulfilling requirements \#3 and \#4
     * Remove unnecessary columns from the measurement data set to fulfill requirement \#2 from the project instructions
     * Bind the personId and activityId columns to the measurement data
-7. Combine the test and training files into a single data set by using the rbind\(\) function, fulfilling requirement \#1
+7. Combine the test and training files into a single data set by using the rbind() function, fulfilling requirement \#1
 8. Merge the activity labels into the combined measurement data set. At this point, course project requirements \#1 through \#4 are fulfilled
 9. Summarize the measurement columns to create a wide version of a [tidy data set](#widevsnarrow)
     * Each variable forms a column: means of the 66 variables that were means or standard deviations plus personId and activityName for a total of 68 columns,
-    * One row per subject \(personId\) activity \(activityName\) combination, and
-    * Each observational unit \(personId\) \(activityName\) combinations with columns representing means of the 66 variables forms one table
-10. Add "meanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean\(\) function beyond the data originally provided by the *Human Activity Recognition* research team  
+    * One row per subject (personId) activity (activityName) combination, and
+    * Each observational unit (personId) (activityName) combinations with columns representing means of the 66 variables forms one table
+10. Add "meanOf" to beginning of measurement column names to signify that this data has been aggregated with the mean() function beyond the data originally provided by the *Human Activity Recognition* research team  
 11. Write the output file
 12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
 <h2 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h2>
-As stated earlier, it was difficult to ascertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows \(2,947\) as do the training files \(7,352\). Then it becomes clear that these files should be combined to make a complete test or training data set.
+As stated earlier, it was difficult to ascertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows (2,947) as do the training files (7,352). Then it becomes clear that these files should be combined to make a complete test or training data set.
 
 The same challenge existed for naming the columns on the X_test.txt and X_train.txt data files. There are 561 rows in the features.txt file, one per column of data in the test and training measurements files. Since the features.txt file contains characters that are unsuitable for use as column names in an R data table, one must strip out these characters before using the feature data as a set of column names.
 
 Complicating matters is the fact that one must process the files in a specific sequence in order to obtain the desired result, a complete file including personId, activityName, and the 66 columns of measurements that are either means or standard deviations. The correct sequence that must be taken separately with the test and training data is:
 
-1. Determine which variables are means or standard deviations. Since this is easier to accomplish with the messy data, as one can search for mean\(\) and std\(\) text strings with the data as provided by the researchers, this step should be taken first
+1. Determine which variables are means or standard deviations. Since this is easier to accomplish with the messy data, as one can search for mean() and std() text strings with the data as provided by the researchers, this step should be taken first
 2. Clean the column names by removing characters that are not appropriate for column names in R
 3. Create a list of the cleaned mean and standard deviation names for use in removing unwanted variables from the data set in fulfillment of requirement \#2
 4. Assign the cleaned names as column names in the measurement data set. It is important to assign the column names before removing unwanted columns to maintain the correspondence between measurement data set column number and feature name
 5. Remove all columns other than standard deviations and means from the measurement data set
 6. Column bind the personId and activityId columns onto the measurement data set. This step must occur last in the sequence to maintain the correspondence between measurement data set column number and feature name
 
-Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R rbind\(\) function that adds the rows from each table into a single output data frame.
+Once these five steps are complete for both the test and training data, the two resulting data sets can be combined with the R `rbind()` function that adds the rows from each table into a single output data frame.
 
 Finally, we must merge the activity names into the combined test and training data in fulfillment of requirement \#3.
 
@@ -284,7 +284,7 @@ Since there were 33 base variables and a mean and standard deviation was calcula
 
 <h2 id="widevsnarrow">Commentary: Output File -- Wide vs. Narrow Tidy Format</h2>
 
-In Hadley Wickham's *Tidy Data* paper, he describes two distinct formats for tidy data: narrow and wide \(Wickham, 2014 p. 6\). A wide format tidy data set contains multiple variables in columns, where each column represents one and only one variable for the observational unit. The narrow format "melts" the measurement columns into two distinct columns containing many more rows than a wide data set. These two columns are named "column" and "value", where each row of the narrow form data set contains one measurement of one variable per observational unit.
+In Hadley Wickham's *Tidy Data* paper, he describes two distinct formats for tidy data: narrow and wide (Wickham, 2014 p. 6). A wide format tidy data set contains multiple variables in columns, where each column represents one and only one variable for the observational unit. The narrow format "melts" the measurement columns into two distinct columns containing many more rows than a wide data set. These two columns are named "column" and "value", where each row of the narrow form data set contains one measurement of one variable per observational unit.
 
 For the purposes of the *Getting and Cleaning Data* project, the data set that conforms with requirements \#1 - \#4 is a wide format data set. It is not "tidy" because each row represents a specific run of an experiment for one person / activity, but there is no column in the data set to distinguish the unique experiments. Since there is a straightforward way in R to summarize the 66 means and standard deviations by personId and activityName, then the wide format tidy data set is easiest to produce as per the following line of R code.
 
