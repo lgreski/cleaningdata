@@ -354,8 +354,8 @@ The total amount of memory used by R after merging the test and training data wa
 Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
 
 <h2> run_analysis.R Runbook </h2>
-A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or processes conducted by a system administrator or operator. For the purposes of working with *run_analysis.R*, the  following steps must be taken to run the script. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set, and therefore does not already have the required data files stored on the computer where *run_analysis.R* will be executed. Therefore, the script downloads the required zip file, and unzips it into the R working directory.
 
+A [runbook](https://en.wikipedia.org/wiki/Runbook) is a compilation of steps or processes conducted by a system administrator or operator. For the purposes of working with *run_analysis.R*, the  following steps must be taken to run the script. It is assumed that the person who needs to run the script has not previously worked with the *A Public Domain Dataset for Human Activity Recognition Using Smartphones* data set, and therefore does not already have the required data files stored on the computer where *run_analysis.R* will be executed. Therefore, the script downloads the required zip file, and unzips it into the R working directory.
 
 1. Download [run_analysis.R](https://github.com/lgreski/cleaningdata/blob/master/run_analysis.R) and copy it to the *R Working Directory*.
 2. Start RStudio, load *run_analysis.R* into the Source pane in the upper left quadrant of the screen, select all code and press the \<Run\> button.
