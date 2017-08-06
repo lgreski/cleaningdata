@@ -114,7 +114,7 @@ The key challenge to using the data set  provided by the Technical Research Cent
     </tr>
     <tr>
         <td valign=top>activity_labels.txt</td>
-        <td>File containing six rows of data, where each row contains an activity identifier and an activity description, a text label to associate with the y_train.txt and y_test.txt files. The numeric identifier and text labels are separated by a blank space. The activity label words are delmited by an underscore when an activity contains more than a single word. </td>
+        <td>File containing six rows of data, where each row contains an activity identifier and an activity description, a text label to associate with the y_train.txt and y_test.txt files. The numeric identifier and text labels are separated by a blank space. The activity label words are delimited by an underscore when an activity contains more than a single word. </td>
     </tr>
     <tr>
         <td valign=top>features.txt</td>
@@ -225,7 +225,7 @@ The following R code can be used to read the tidy data file once it has been cop
 
 <h1 id="processing">Processing Steps</h1>
 
- This section provides an outline of the processing steps used to create the project deliverables, and explains the rationale behind various decisions we made as we produced the ouptut necessary to fulfill the five requirements listed in the project instructions. It concludes with step by step instructions for running the script.
+ This section provides an outline of the processing steps used to create the project deliverables, and explains the rationale behind various decisions we made as we produced the output necessary to fulfill the five requirements listed in the project instructions. It concludes with step by step instructions for running the script.
 
 <h2 id="stepsoutline">Summary of Processing Steps in run_analysis.R </h2>
 
@@ -259,6 +259,7 @@ The following R code can be used to read the tidy data file once it has been cop
 12. Verify the accuracy of the output data file. At this point, course project requirement \#5 is fulfilled
 
 <h2 id="reading">Commentary: Reading the Human Activity Recognition Input Files</h2>
+
 As stated earlier, it was difficult to ascertain from the documentation provided by the *Technical Research Centre* how to combine the information in the various files. The key clue to understanding their structure is that all three of the test files have the same number of rows (2,947) as do the training files (7,352). Then it becomes clear that these files should be combined to make a complete test or training data set.
 
 The same challenge existed for naming the columns on the X_test.txt and X_train.txt data files. There are 561 rows in the features.txt file, one per column of data in the test and training measurements files. Since the features.txt file contains characters that are unsuitable for use as column names in an R data table, one must strip out these characters before using the feature data as a set of column names.
