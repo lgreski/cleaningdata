@@ -353,7 +353,7 @@ The computers and their configurations are described in the following table.
 
 The total amount of memory used by R after merging the test and training data was 102Mb, well within the limits of any of the machines on which we tested the *run_analysis.R* script. Given our test results, a computer with at least 2Ghz of processing power, 4Gb of memory, and 10Gb of free disk space should have more than sufficient capacity to process the script with R.
 
-Two R packages beyond the default installation must be available to execute the script: dplyr and data.table. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
+Two R packages beyond the default installation must be available to execute the script: [dplyr] and [data.table]. The *run_analysis.R* script automatically installs the required packages if they are not already present in the environment.
 
 <h2> run_analysis.R Runbook </h2>
 
